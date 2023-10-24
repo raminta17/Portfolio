@@ -61,10 +61,54 @@ nav a:hover, .bottomBorder {
     height: 20px;
     object-fit: contain;
 }
+
 .getInTouchBtn {
-    width: 100px;
+    margin-top: 10px;
+    width: 250px;
+    box-shadow:inset 0px 1px 20px 0px #fce2c1;
+    background-color:#ffc477;
+    border-radius:42px;
+    border:3px solid #ffc477;
+    display:inline-block;
+    cursor:pointer;
+    color:#2c2b2b;
+    font-size:15px;
+    font-weight:bold;
+    padding:10px 10px;
+    text-shadow:0px 1px 0px #cc9f52;
+    transition: var(--transition);
+}
+.getInTouchBtn:hover {
+    background-color:#fb9e25;
+}
+.fixedBtn {
     position: fixed;
-    right: 20px;
     bottom: 20px;
-    background-color: #e59545;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: bouncingBtn 1s ease-in-out alternate-reverse infinite ;
+    font-size: 25px;
+}
+.getInTouchBtn:active {
+    position:relative;
+    bottom:1px;
+}
+.fixedBtn:active {
+    position: fixed;
+    bottom: 21px;
+}
+.footer {
+    min-height: 200px;
+}
+.modal-dialog {
+    top: 100px;
+}
+
+@keyframes bouncingBtn {
+    from {bottom:20px;}
+    to {bottom: 30px;}
 }
