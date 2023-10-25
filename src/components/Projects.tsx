@@ -21,7 +21,7 @@ const Projects = () => {
 
     const projects: ProjectType[] = [
         {
-            title: 'Social media page',
+            title: 'Social media website',
             techUsed: [
                 {
                     title: 'Mongo DB',

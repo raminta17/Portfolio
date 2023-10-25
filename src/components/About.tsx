@@ -7,15 +7,14 @@ const About = () => {
                 six-month full-time course focused on JavaScript, TypeScript, React, and Node.js. This journey has been
                 incredibly fulfilling, and I am eager to apply my new skills in practical settings.
             </div>
-            {/*<br>*/}
             <div> I pride myself on my strong sense of responsibility, adaptability, proactiveness, and a relentless
                 desire for learning. My professional experience spans both collaborative team environments and
                 independent work. I look forward to an opportunity to contribute my skills and enthusiasm to a
                 dynamic and innovative field.
             </div>
-            <div className="d-flex gap-5">
-                <div className="box">
-                    <div className="bottomBorder py-2">Technical Skills</div>
+            <div className="d-flex gap-5 mt-2">
+                <div className="box p-4">
+                    <h4 className="bottomBorder py-2 pb-3">Technical Skills</h4>
                     <ul className="p-3">
                         <li><i className="fa-brands fa-html5 text-danger"></i>HTML</li>
                         <li><i className="fa-brands fa-css3-alt text-primary"></i>CSS</li>
@@ -34,8 +33,8 @@ const About = () => {
                         <li><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Socket-io.svg/2048px-Socket-io.svg.png" alt=""/>Socket.io</li>
                     </ul>
                 </div>
-                <div className="box">
-                    <div className="bottomBorder py-2">Soft Skills</div>
+                <div className="box p-4">
+                    <h4 className="bottomBorder py-2 pb-3">Soft Skills</h4>
                     <ul className="p-3">
                         <li>High sense of responsibility</li>
                         <li>Adaptability</li>
