@@ -44,11 +44,10 @@ function App() {
                 {showBtn && <button onClick={handleShowModal} className="getInTouchBtn fixedBtn"><Envelope/></button>}
             </div>
             <Footer/>
-            <Modal  show={showModal} style={{background: 'linear-gradient(184deg, rgba(0,0,0,0.7204131652661064) 0%, rgba(82,78,94,0.9389005602240896) 100%)'}} onHide={handleCloseModal}>
+            <Modal  show={showModal} style={{ background: 'linear-gradient(184deg, rgba(0,0,0,0.6251750700280112) 100%, rgba(82,78,94,0.9389005602240896) 100%)'}} onHide={handleCloseModal}>
                     <Modal.Header closeButton>
-                        <Modal.Title className="text-black">Get in touch with Raminta</Modal.Title>
+                        <Modal.Title className="text-black">Get in touch</Modal.Title>
                     </Modal.Header>
-                    <Modal.Body></Modal.Body>
                     <div className="w-100 d-flex flex-column p-3 gap-2">
                     <textarea className="p-2 rounded border " ref={messageRef} id="declined" rows={5} cols={50}
                               placeholder="Your message to Raminta...   "></textarea>

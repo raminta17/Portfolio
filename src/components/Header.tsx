@@ -13,7 +13,6 @@ const Header = ({setShowModal}:ShowModalType) => {
                 <h2>Full Stack Developer</h2>
                 <h5>Welcome to my Portfolio</h5>
                 <button onClick={() => setShowModal(true)} className="getInTouchBtn d-flex align-items-center gap-2 justify-content-center">GET IN TOUCH</button>
-
             </div>
             </div>
     );
