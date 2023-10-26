@@ -1,19 +1,40 @@
+import {useEffect, useRef, useState} from "react";
+import {useInView} from "framer-motion";
+
 const About = () => {
+
+    const projectRef = useRef(null);
+    const [style, setStyle] = useState({});
+    const isInView = useInView(projectRef);
+
+    useEffect(() => {
+        console.log("Element is in view: ", isInView)
+        setStyle({
+            transform: isInView ? "none" : "translateY(200px)",
+            opacity: isInView ? 1 : 0,
+            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
+        });
+    }, [isInView])
+
+
     return (
-        <div id="about" className="w-75 mx-auto p-3 d-flex flex-column gap-4 about">
-            <h2 className="bottomBorder py-3">About</h2>
-            <div>After a 7 year career as a physiotherapist in Scotland, I discovered my passion for software
-                development; therefore, I decided to embark on a new career path. I am currently enrolled in a rigorous
-                six-month full-time course focused on JavaScript, TypeScript, React, and Node.js. This journey has been
-                incredibly fulfilling, and I am eager to apply my new skills in practical settings.
+        <div id="about" className="content mx-auto p-3 d-flex flex-column gap-4 about mb-5">
+            <h2 className="bottomBorder py-3">ABOUT</h2>
+            <div style={{border: '1px solid var(--lightTextColor)'}} className="d-flex p-5 flex-column gap-3">
+                <div>After a 7 year career as a physiotherapist in Scotland, I discovered my passion for software
+                    development; therefore, I decided to embark on a new career path. I am currently enrolled in a rigorous
+                    six-month full-time course focused on JavaScript, TypeScript, React, and Node.js. This journey has been
+                    incredibly fulfilling, and I am eager to apply my new skills in practical settings.
+                </div>
+                <div> I pride myself on my strong sense of responsibility, adaptability, proactiveness, and a relentless
+                    desire for learning. My professional experience spans both collaborative team environments and
+                    independent work. I look forward to an opportunity to contribute my skills and enthusiasm to a
+                    dynamic and innovative field.
+                </div>
             </div>
-            <div> I pride myself on my strong sense of responsibility, adaptability, proactiveness, and a relentless
-                desire for learning. My professional experience spans both collaborative team environments and
-                independent work. I look forward to an opportunity to contribute my skills and enthusiasm to a
-                dynamic and innovative field.
-            </div>
-            <div className="d-flex gap-5 mt-2">
-                <div className="box p-4">
+
+            <div className="skills d-flex gap-5 mt-2">
+                <div className="box p-4" ref={projectRef} style={style}>
                     <h4 className="bottomBorder py-2 pb-3">Technical Skills</h4>
                     <ul className="p-3">
                         <li><i className="fa-brands fa-html5 text-danger"></i>HTML</li>
@@ -33,7 +54,7 @@ const About = () => {
                         <li><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Socket-io.svg/2048px-Socket-io.svg.png" alt=""/>Socket.io</li>
                     </ul>
                 </div>
-                <div className="box p-4">
+                <div className="box p-4" ref={projectRef} style={style}>
                     <h4 className="bottomBorder py-2 pb-3">Soft Skills</h4>
                     <ul className="p-3">
                         <li>High sense of responsibility</li>
@@ -41,6 +62,7 @@ const About = () => {
                         <li>Professionalism</li>
                         <li>Team player</li>
                         <li>Problem-solving</li>
+                        <li>Communication and teaching</li>
                         <li>Honesty</li>
                     </ul>
                 </div>

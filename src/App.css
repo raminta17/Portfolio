@@ -5,28 +5,87 @@
 }
 
 * {
- margin: 0;
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     color: var(--lightTextColor);
     font-family: 'Montserrat', sans-serif;
 }
+
 .f1 {
-    flex:1;
+    flex: 1;
 }
+
 .centered {
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 .header {
     height: 100vh;
 }
+
+.headerArrow {
+    font-size: 50px;
+    position: absolute;
+    bottom: 20px;
+    animation: bouncingBtn 1s linear alternate-reverse infinite;
+}
+.arrows {
+    width: 60px;
+    height: 72px;
+    position: absolute;
+    left: 50%;
+    margin-left: -30px;
+    bottom: 20px;
+    transition: var(--transition);
+}
+
+.arrows path {
+    stroke: var(--lightTextColor);
+    fill: transparent;
+    stroke-width: 1px;
+    animation: arrow 2s infinite;
+    -webkit-animation: arrow 2s infinite;
+}
+
+@keyframes arrow
+{
+    0% {opacity:0}
+    20% {opacity: 0.5}
+    40% {opacity:1}
+    80% {opacity:0}
+    100% {opacity:0}
+}
+
+@-webkit-keyframes arrow /*Safari and Chrome*/
+{
+    0% {opacity:0}
+    40% {opacity:1}
+    80% {opacity:0}
+    100% {opacity:0}
+}
+
+.arrows path.a1 {
+    animation-delay:-1s;
+    -webkit-animation-delay:-1s; /* Safari 和 Chrome */
+}
+
+.arrows path.a2 {
+    animation-delay:-0.5s;
+    -webkit-animation-delay:-0.5s; /* Safari 和 Chrome */
+}
+
+.arrows path.a3 {
+    animation-delay:0s;
+    -webkit-animation-delay:0s; /* Safari 和 Chrome */
+}
 .parallaxBg {
-    background-image: linear-gradient(184deg, rgba(0,0,0,0.7204131652661064) 0%, rgba(82,78,94,0.9389005602240896) 100%), url("https://www.findingtheuniverse.com/wp-content/uploads/2021/04/Sunset-over-Glencoe-and-Glen-Etive_by_Laurence-Norah-2.jpg");
-    /*min-height: 500px;*/
+    background-image: linear-gradient(184deg, rgba(0, 0, 0, 0.7204131652661064) 0%, rgba(82, 78, 94, 0.9389005602240896) 100%), url("https://www.findingtheuniverse.com/wp-content/uploads/2021/04/Sunset-over-Glencoe-and-Glen-Etive_by_Laurence-Norah-2.jpg");
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -34,62 +93,125 @@ body {
 }
 
 .main {
-  background-color: #2c2b2b;
+    background-color: #2c2b2b;
+}
+.nav {
+    gap: 50px;
+    background: #2c2b2b;
+    z-index: 1;
+}
+.navDiv {
+    padding: 20px;
+}
+#fixed {
+    position: fixed;
+    left:0;
+    top:0;
+    height: 100vh;
+    z-index: 2;
+    flex-direction: column;
+    background: transparent;
+}
+#fixed hr {
+    display: none;
+}
+#fixed .navDiv {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    transition: var(--transition);
+
+}
+#fixed .navDiv a {
+    font-size: medium;
+}
+#fixed .navDiv:hover {
+    background: var(--lightTextColor);
+}
+#fixed .navDiv:hover a {
+    color: black;
 }
 nav a {
     transition: var(--transition);
     padding: 10px;
-    border-bottom: 1px solid  #2c2b2b;
     text-decoration: none;
     color: var(--lightTextColor);
 }
-nav a:hover, .bottomBorder {
+
+.bottomBorder {
     border-bottom: var(--bottom-border);
+}
+
+.navDiv hr {
+    opacity:0;
+    width: 100%; /* Set initial width to 100% */
+    transition: opacity 0.5s, width 0.5s;
+    animation: lineOut 0.5s linear; /* New animation for reverse effect */
+}
+.navDiv:hover  hr{
+    opacity: 1;
+    animation: lineIn 0.5s linear ;
+}
+.content {
+    width: 75%;
 }
 .about {
     text-align: justify;
 }
+
 .box {
     background-color: #1c1c1c;
-    border-radius:10px;
+    border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     padding: 10px;
-    flex:1;
+    flex: 1;
 }
+
 .about .box img {
     width: 16px;
     margin-right: 5px;
 }
-.about .box ul li i{
+
+.about .box ul li i {
     margin-right: 5px;
+}
+.projects {
+    background: #1c1c1c;
 }
 .projects img, .projects i {
     width: 30px;
     height: 30px;
     object-fit: contain;
 }
+.projects .box {
+    background: #2c2b2b;
+}
 .nav a {
     font-size: x-large;
 }
+
 .getInTouchBtn {
     margin-top: 10px;
     width: 250px;
-    box-shadow:inset 0px 1px 20px 0px #fce2c1;
-    background-color:#ffc477;
-    border-radius:42px;
-    border:3px solid #ffc477;
-    display:inline-block;
-    cursor:pointer;
-    color:#2c2b2b;
-    font-size:15px;
-    font-weight:bold;
-    padding:10px 10px;
-    text-shadow:0px 1px 0px #cc9f52;
-    transition: var(--transition);
+    /*box-shadow: inset 0px 1px 20px 0px #fce2c1;*/
+    background-color: transparent;
+    border-radius: 42px;
+    border: 3px solid #ffc477;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffc477;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px 10px;
+    /*text-shadow: 0px 1px 0px #cc9f52;*/
 }
+
 .getInTouchBtn:hover {
-    background-color:#fb9e25;
+    background-color: #ffc477;
+    /*border: 3px solid #fb9e25;*/
+    color: #2c2b2b;
 }
+
 .fixedBtn {
     position: fixed;
     bottom: 20px;
@@ -99,45 +221,54 @@ nav a:hover, .bottomBorder {
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: bouncingBtn 1s ease-in-out alternate-reverse infinite ;
+    animation: bouncingBtn 1s linear alternate-reverse infinite;
     font-size: 25px;
 }
+
 .getInTouchBtn:active {
-    position:relative;
-    bottom:1px;
+    position: relative;
+    bottom: 1px;
 }
+
 .fixedBtn:active {
     position: fixed;
     bottom: 21px;
 }
+
 .footer {
     min-height: 200px;
 }
+
 .modal-dialog {
     top: 100px;
 }
-
+.singleProject a, .footer a {
+    font-style: italic;
+}
 a {
     color: #cc9f52;
     text-decoration: none;
     transition: var(--transition);
     cursor: pointer;
 }
-.footer a {
 
-}
-.box a:hover{
+.box a:hover {
     color: #fb9e25;
 }
+
 .mainImage {
     width: 100%;
-
+    border: 1px solid var(--lightTextColor);
+    padding: 10px;
+    border-radius: 10px;
 }
+
 .projectImages {
     position: relative;
     transition: var(--transition);
 }
-.mainImage img{
+
+.mainImage img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -145,53 +276,138 @@ a {
     transition: var(--transition);
 }
 
+.imageModal {
+    width: 80%;
+}
+
 .projectImages:hover .plus {
     opacity: 1;
     transition: var(--transition);
 }
+
 .plus {
     position: absolute;
     align-items: center;
     justify-content: center;
     display: flex;
-    top:0;
+    top: 0;
     z-index: 1;
-   background: rgb(0,0,0);
-    background: linear-gradient(184deg, rgba(0,0,0,0.6251750700280112) 100%, rgba(82,78,94,0.9389005602240896) 100%);
+    background: linear-gradient(184deg, rgba(0, 0, 0, 0.6251750700280112) 100%, rgba(82, 78, 94, 0.9389005602240896) 100%);
     width: 100%;
     height: 100%;
     opacity: 0;
     transition: var(--transition);
 }
+
+.arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    font-size: 50px;
+    flex: 1;
+    transition: var(--transition);
+}
+
+.arrow:hover {
+    color: grey;
+}
+
 .footer .i {
     color: #cc9f52;
 }
+
 .profileImg {
     border-radius: 50%;
     width: 100px;
     opacity: 0.5;
 }
+
 .modal-dialog {
     height: 100vh;
     margin-top: 0;
     display: flex;
     align-items: center;
 }
-@keyframes bouncingBtn {
-    from {bottom:20px;}
-    to {bottom: 30px;}
+
+.modalProjectImages .modal-content {
+    background: none;
 }
+
+.close {
+    font-size: 50px;
+    position: absolute;
+    right: 0;
+    top: -50px;
+    z-index: 2000;
+}
+
+@keyframes bouncingBtn {
+    from {
+        bottom: 20px;
+    }
+    to {
+        bottom: 30px;
+    }
+}
+
+@keyframes lineIn {
+    from {
+        width: 0;
+    }
+    to {
+        width:100%;
+    }
+}
+@keyframes lineOut {
+    from {
+        width: 100%;
+    }
+    to {
+        width:0;
+    }
+}
+
 @media (max-width: 1190px) {
     .box {
         flex-direction: column;
     }
+
     .singleProject {
         align-items: start;
     }
 }
+@media (max-width: 768px) {
+    .content {
+        width: 100%;
+    }
+    .skills {
+        flex-direction: column;
+    }
+    .sm-column {
+        flex-direction: column;
+    }
+    .sm-d-none {
+        display: none;
+    }
+    .nav {
+        gap: 5px;
+    }
+    .navDiv {
+        padding: 10px;
+    }
+    #fixed {
+        position: relative;
+    }
+}
 @media (min-width: 576px) {
+
+    .modal {
+        --bs-modal-margin: 0;
+    }
+
     .modal-dialog {
         top: 0;
-        max-width: 70vw;
+        max-width: 90vw;
     }
 }

@@ -7,18 +7,17 @@ import {useState, useEffect, useRef} from "react";
 import Footer from "./components/Footer.tsx";
 import {Modal} from "react-bootstrap";
 import {Envelope} from "react-bootstrap-icons";
+import {motion} from "framer-motion";
 
 function App() {
 
     const [showBtn, setShowBtn] = useState(false);
     const [showModal, setShowModal] = useState(false);
+
     const messageRef = useRef<HTMLTextAreaElement | null>(null);
 
     const handleCloseModal = () => {
         setShowModal(false);
-    }
-    const handleShowModal = () => {
-        setShowModal(true);
     }
     const handleMessageSent = () => {
         if(messageRef.current)  console.log(messageRef.current.value);
@@ -37,11 +36,20 @@ function App() {
     return (
         <>
             <Header setShowModal={setShowModal}/>
-            <div className="main p-3 d-flex flex-column gap-4">
+            <div className="main d-flex flex-column gap-4">
                 <Navigation/>
                 <About/>
                 <Projects/>
-                {showBtn && <button onClick={handleShowModal} className="getInTouchBtn fixedBtn"><Envelope/></button>}
+                {showBtn &&
+                    <motion.div
+                        onClick={() => setShowModal(true)}
+                        className="getInTouchBtn fixedBtn"
+                        whileHover={{ scale: 1.1 }}
+                        transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                    >
+                        <Envelope/>
+                    </motion.div>
+                }
             </div>
             <Footer/>
             <Modal  show={showModal} style={{ background: 'linear-gradient(184deg, rgba(0,0,0,0.6251750700280112) 100%, rgba(82,78,94,0.9389005602240896) 100%)'}} onHide={handleCloseModal}>
@@ -55,10 +63,7 @@ function App() {
                             Send
                         </button>
                     </div>
-
-
             </Modal>
-
         </>
     )
 }

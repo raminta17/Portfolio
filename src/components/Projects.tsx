@@ -140,9 +140,12 @@ const Projects = () => {
 
 
     return (
-        <div id="projects" className="w-75 mx-auto p-3 d-flex flex-column gap-4 projects">
-            <h2 className="bottomBorder py-3">Projects</h2>
-            {projects.map((project:ProjectType,index:number) => <SingleProject key={index} project={project}/>)}
+        <div id="projects" className="projects py-5">
+            <div className="content mx-auto p-3 d-flex flex-column gap-4">
+                <h2 className="bottomBorder py-3">PROJECTS</h2>
+                {projects.map((project:ProjectType,index:number) => <SingleProject key={index} project={project}/>)}
+            </div>
+
         </div>
     );
 };
