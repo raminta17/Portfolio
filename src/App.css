@@ -46,9 +46,9 @@ body {
 }
 
 .arrows path {
-    stroke: var(--lightTextColor);
+    stroke: white;
     fill: transparent;
-    stroke-width: 1px;
+    stroke-width: 2px;
     animation: arrow 2s infinite;
     -webkit-animation: arrow 2s infinite;
 }
@@ -84,6 +84,11 @@ body {
     animation-delay:0s;
     -webkit-animation-delay:0s; /* Safari 和 Chrome */
 }
+.bgSettings {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .parallaxBg {
     background-image: linear-gradient(184deg, rgba(0, 0, 0, 0.7204131652661064) 0%, rgba(82, 78, 94, 0.9389005602240896) 100%), url("https://www.findingtheuniverse.com/wp-content/uploads/2021/04/Sunset-over-Glencoe-and-Glen-Etive_by_Laurence-Norah-2.jpg");
     background-attachment: fixed;
@@ -103,34 +108,7 @@ body {
 .navDiv {
     padding: 20px;
 }
-#fixed {
-    position: fixed;
-    left:0;
-    top:0;
-    height: 100vh;
-    z-index: 2;
-    flex-direction: column;
-    background: transparent;
-}
-#fixed hr {
-    display: none;
-}
-#fixed .navDiv {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    transition: var(--transition);
 
-}
-#fixed .navDiv a {
-    font-size: medium;
-}
-#fixed .navDiv:hover {
-    background: var(--lightTextColor);
-}
-#fixed .navDiv:hover a {
-    color: black;
-}
 nav a {
     transition: var(--transition);
     padding: 10px;
@@ -242,6 +220,9 @@ nav a {
 .modal-dialog {
     top: 100px;
 }
+.singleProject {
+    height: 80vh;
+}
 .singleProject a, .footer a {
     font-style: italic;
 }
@@ -258,9 +239,6 @@ a {
 
 .mainImage {
     width: 100%;
-    border: 1px solid var(--lightTextColor);
-    padding: 10px;
-    border-radius: 10px;
 }
 
 .projectImages {
@@ -396,8 +374,46 @@ a {
     .navDiv {
         padding: 10px;
     }
+    /*#fixed {*/
+    /*    position: relative;*/
+    /*}*/
+}
+@media (min-width: 768px) {
     #fixed {
-        position: relative;
+        position: fixed;
+        left:0;
+        top:0;
+        height: 100vh;
+        z-index: 2;
+        flex-direction: column;
+        background: transparent;
+        gap:5px;
+    }
+    #fixed hr {
+        display: none;
+    }
+    #fixed .navDiv {
+        display: flex;
+        align-items: center;
+        padding: 5px;
+        width: 100%;
+        text-align: center;
+        transition: var(--transition);
+
+    }
+    #fixed .largeNavText {
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+    #fixed .smallNavText {
+        font-size: 0.8rem;
+        font-weight: bold;
+    }
+    #fixed .navDiv:hover {
+        background: var(--lightTextColor);
+    }
+    #fixed .navDiv:hover a {
+        color: black;
     }
 }
 @media (min-width: 576px) {

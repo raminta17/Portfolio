@@ -3,6 +3,9 @@ import socialMedia1 from '../assets/social_media_1.png'
 import socialMedia2 from '../assets/social_media_2.png'
 import socialMedia3 from '../assets/social_media_3.png'
 import socialMedia4 from '../assets/social_media_4.png'
+import {useInView} from "framer-motion";
+import {useUserStore} from "../models/types.tsx";
+import {useEffect, useRef} from "react";
 
 const Projects = () => {
 
@@ -137,10 +140,25 @@ const Projects = () => {
             backEnd: 'https://github.com/raminta17/tamagotchi_Back-End'
         }
     ]
+    const projectsRef = useRef(null);
+    const isProjectsInView = useInView(projectsRef);
+    const {setIsAboutInView, setIsProjectsInView, setIsContactsInView} = useUserStore((state) => ({
+        setIsProjectsInView: state.setIsProjectsInView,
+            setIsContactsInView: state.setIsContactsInView,
+            setIsAboutInView: state.setIsAboutInView
 
+    }) )
+
+    useEffect(() => {
+        if(isProjectsInView) {
+            setIsProjectsInView(true)
+            setIsContactsInView(false)
+            setIsAboutInView(false)
+        }
+    }, [isProjectsInView])
 
     return (
-        <div id="projects" className="projects py-5">
+        <div id="Projects" className="projects py-5" ref={projectsRef}>
             <div className="content mx-auto p-3 d-flex flex-column gap-4">
                 <h2 className="bottomBorder py-3">PROJECTS</h2>
                 {projects.map((project:ProjectType,index:number) => <SingleProject key={index} project={project}/>)}
