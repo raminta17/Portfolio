@@ -10,9 +10,9 @@ const About = () => {
     const textRef = useRef(null);
     const [styleAbout, setStyleAbout] = useState({});
     const [styleSkill, setStyleSkill] = useState({});
-    const isSkillInView = useInView(skillRef);
-    const isAboutInView = useInView(aboutRef);
-    const isTextInView = useInView(textRef);
+    const isSkillInView = useInView(skillRef,{ once: true });
+    const isAboutInView = useInView(aboutRef, { once: true });
+    const isTextInView = useInView(textRef, { once: true });
     const {setIsAboutInView, setIsProjectsInView, setIsContactsInView} = useUserStore((state) => ({
         setIsProjectsInView: state.setIsProjectsInView,
         setIsContactsInView: state.setIsContactsInView,

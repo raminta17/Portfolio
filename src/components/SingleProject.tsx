@@ -28,7 +28,7 @@ const SingleProject = ({ project }:ProjectType)=>  {
     const [imageIndex, setImageIndex] = useState(0);
     const projectRef = useRef(null);
     const [style, setStyle] = useState({});
-    const isInView = useInView(projectRef);
+    const isInView = useInView(projectRef, { once: true });
 
     useEffect(() => {
         setStyle({
