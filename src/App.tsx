@@ -8,7 +8,7 @@ import Footer from "./components/Footer.tsx";
 import {Modal} from "react-bootstrap";
 import {Envelope} from "react-bootstrap-icons";
 import {motion} from "framer-motion";
-import {useForm, SubmitHandler, FieldValue} from "react-hook-form";
+import {useForm, SubmitHandler} from "react-hook-form";
 
 
 
@@ -18,23 +18,17 @@ function App() {
     const [showBtn, setShowBtn] = useState(false);
     const [showModal, setShowModal] = useState(false);
 
-    // type Inputs = {
-    //     senderEmail: string,
-    //     message: string
-    // };
+    type Inputs = {
+        senderEmail: string,
+        message: string
+    };
 
-    // type body = {
-    //     method: string,
-    //     headers: object,
-    //     body: any
-    // }
     const {
         register,
         handleSubmit,
         formState: { errors },
-    } = useForm();
-     const  submitEmail: SubmitHandler< FieldValue<any> >= async  (info) => {
-        console.log('info i will send to back', info)
+    } = useForm<Inputs>();
+     const  submitEmail:SubmitHandler<Inputs> = async  (info) => {
          const options= {
             method: 'POST',
              headers: {
@@ -48,8 +42,6 @@ function App() {
        const response =  await fetch('http://localhost:8000/sendEmail',options);
         const data = await response.json();
          console.log('data from backend', data)
-
-
     }
 
 
@@ -93,7 +85,7 @@ function App() {
                     <div className="w-100 d-flex flex-column p-3 gap-2">
                         <form onSubmit={handleSubmit(submitEmail)}>
                             <input type="email" {...register('senderEmail', {required: 'Please provide your email address to send the message', minLength: { value: 5, message: 'Invalid email'}})}/>
-                            <p>{errors.senderEmail?.message}</p>
+                            {errors.senderEmail && <p>{errors.senderEmail.message}</p>}
                               <textarea
                                   className="p-2 rounded border "
                                   // ref={messageRef}
@@ -101,7 +93,7 @@ function App() {
                                   id="declined"
                                   rows={5} cols={50}
                                   placeholder="Your message to Raminta...   "/>
-                            <p>{errors.message?.message}</p>
+                            {errors.message && <p>{errors.message.message}</p>}
 
                             <button className="getInTouchBtn w-100"
                                     type="submit"

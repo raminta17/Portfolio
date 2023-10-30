@@ -25,15 +25,15 @@ const Navigation = () => {
     return (
         <nav className="d-flex justify-content-center align-items-center nav sm-column" ref={navRef} id={fixed}>
             <div className="navDiv text-center">
-                <a className={isAboutInView ? 'largeNavText' : 'smallNavText'} href="#about">About</a>
+                <a className={isAboutInView ? 'largeNavText' : 'smallNavText'} href="#About">About</a>
                 <hr/>
             </div>
             <div className="navDiv text-center">
-                <a className={isProjectsInView ? 'largeNavText' : 'smallNavText'} href="#projects">Projects</a>
+                <a className={isProjectsInView ? 'largeNavText' : 'smallNavText'} href="#Projects">Projects</a>
                 <hr/>
             </div>
             <div className="navDiv text-center">
-                <a  className={isContactsInView ? 'largeNavText' : 'smallNavText'}  href="#contacts">Contacts</a>
+                <a  className={isContactsInView ? 'largeNavText' : 'smallNavText'}  href="#Contacts">Contacts</a>
                 <hr/>
             </div>
 
