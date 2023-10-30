@@ -52,11 +52,11 @@ const About = () => {
             <h2 className="bottomBorder py-3">ABOUT</h2>
             <div
                 style={styleAbout}
-                className="d-flex align-items-center sm-column" ref={textRef}>
+                className="d-flex align-items-center sm-column gap-5" ref={textRef}>
                 <div className="rounded ">
                     <img src={profilePhoto} alt=""/>
                 </div>
-                <div  className="d-flex p-5 flex-column gap-3">
+                <div  className="d-flex flex-column gap-3">
                     <div >After a 7 year career as a physiotherapist in Scotland, I discovered my passion for software
                         development; therefore, I decided to embark on a new career path. I am currently enrolled in a rigorous
                         six-month full-time course focused on JavaScript, TypeScript, React, and Node.js. This journey has been
