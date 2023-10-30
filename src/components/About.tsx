@@ -48,7 +48,7 @@ const About = () => {
 
 
     return (
-        <div id="About" className="content mx-auto p-3 d-flex flex-column gap-4 about mb-5" ref={aboutRef} >
+        <div id="About" className="content mx-auto p-3 d-flex flex-column gap-4 about mb-5 overflow-hidden" ref={aboutRef} >
             <h2 className="bottomBorder py-3">ABOUT</h2>
             <div
                 style={styleAbout}
@@ -72,7 +72,7 @@ const About = () => {
 
 
             <div className="skills d-flex gap-5 mt-2">
-                <div className="box p-4" ref={skillRef}
+                <div className="box p-4 " ref={skillRef}
                      style={styleSkill}
                 >
                     <h4 className="bottomBorder py-2 pb-3">Technical Skills</h4>

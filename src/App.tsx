@@ -68,7 +68,7 @@ function App() {
                 {showBtn &&
                     <motion.div
                         onClick={() => setShowModal(true)}
-                        className="getInTouchBtn fixedBtn  sm-d-none"
+                        className="getInTouchBtn fixedBtn"
                         whileHover={{scale: 1.1}}
                         transition={{type: "spring", stiffness: 400, damping: 10}}
                     >

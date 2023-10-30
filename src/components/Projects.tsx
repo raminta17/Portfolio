@@ -158,7 +158,7 @@ const Projects = () => {
     }, [isProjectsInView])
 
     return (
-        <div id="Projects" className="projects py-5" ref={projectsRef}>
+        <div id="Projects" className="projects py-5 overflow-hidden" ref={projectsRef}>
             <div className="content mx-auto p-3 d-flex flex-column gap-4">
                 <h2 className="bottomBorder py-3">PROJECTS</h2>
                 {projects.map((project:ProjectType,index:number) => <SingleProject key={index} project={project}/>)}
