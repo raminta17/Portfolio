@@ -11,7 +11,7 @@ const About = () => {
     const [styleAbout, setStyleAbout] = useState({});
     const [styleSkill, setStyleSkill] = useState({});
     const isSkillInView = useInView(skillRef,{ once: true });
-    const isAboutInView = useInView(aboutRef, { once: true });
+    const isAboutInView = useInView(aboutRef, );
     const isTextInView = useInView(textRef, { once: true });
     const {setIsAboutInView, setIsProjectsInView, setIsContactsInView} = useUserStore((state) => ({
         setIsProjectsInView: state.setIsProjectsInView,
@@ -53,8 +53,11 @@ const About = () => {
             <div
                 style={styleAbout}
                 className="d-flex align-items-center sm-column gap-5" ref={textRef}>
-                <div className="rounded ">
-                    <img src={profilePhoto} alt=""/>
+                <div className="profilePhoto">
+                    <div className="profilePhotoWrapper">
+                        <div style={{background: `url(${profilePhoto})`}}/>
+                    </div>
+
                 </div>
                 <div  className="d-flex flex-column gap-3">
                     <div >After a 7 year career as a physiotherapist in Scotland, I discovered my passion for software

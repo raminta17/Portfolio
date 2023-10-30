@@ -38,7 +38,7 @@ function App() {
                 message: info.message
             })
         }
-        const response = await fetch('http://localhost:8000/sendEmail', options);
+        const response = await fetch('http://localhost:8001/sendEmail', options);
         const data = await response.json();
         console.log('data from backend', data)
     }
