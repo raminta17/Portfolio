@@ -374,8 +374,8 @@ a {
     .navDiv {
         padding: 10px;
     }
-    /*#fixed {*/
-    /*    position: relative;*/
+    /*.bubbleBtn {*/
+    /*    display: none;*/
     /*}*/
 }
 @media (min-width: 768px) {

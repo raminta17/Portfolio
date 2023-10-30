@@ -31,7 +31,6 @@ const SingleProject = ({ project }:ProjectType)=>  {
     const isInView = useInView(projectRef);
 
     useEffect(() => {
-        // console.log("Element is in view: ", isInView)
         setStyle({
             transform: isInView ? "none" : "translateX(200px)",
             opacity: isInView ? 1 : 0,
