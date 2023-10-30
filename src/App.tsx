@@ -18,27 +18,44 @@ function App() {
     const [showBtn, setShowBtn] = useState(false);
     const [showModal, setShowModal] = useState(false);
 
-    // const messageRef = useRef<HTMLTextAreaElement | null>(null);
-
     // type Inputs = {
     //     senderEmail: string,
     //     message: string
     // };
 
+    // type body = {
+    //     method: string,
+    //     headers: object,
+    //     body: any
+    // }
     const {
         register,
         handleSubmit,
         formState: { errors },
     } = useForm();
-    const submitEmail: SubmitHandler< FieldValue<any> >= (data) => console.log(data)
+     const  submitEmail: SubmitHandler< FieldValue<any> >= async  (info) => {
+        console.log('info i will send to back', info)
+         const options= {
+            method: 'POST',
+             headers: {
+                "content-type": "application/json"
+             },
+             body: JSON.stringify({
+                 senderEmail: info.senderEmail,
+                 message: info.message
+             })
+         }
+       const response =  await fetch('http://localhost:8000/sendEmail',options);
+        const data = await response.json();
+         console.log('data from backend', data)
+
+
+    }
 
 
     const handleCloseModal = () => {
         setShowModal(false);
     }
-    // const handleMessageSent = () => {
-    //     if(messageRef.current)  console.log(messageRef.current.value);
-    // }
 
     useEffect(() => {
         window.addEventListener('scroll', () => {
