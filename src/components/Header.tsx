@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from "react";
-// import {ChevronDoubleDown} from "react-bootstrap-icons";
 import { motion } from "framer-motion";
 
 type ShowModalType = {

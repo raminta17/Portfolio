@@ -1,6 +1,6 @@
 import {useEffect, useRef, useState} from "react";
 import {useInView} from "framer-motion";
-import {useUserStore} from "../models/types.tsx";
+import {useUserStore} from "../models/store.tsx";
 import profilePhoto from "../assets/Raminta_photo_square.jpg"
 
 const About = () => {

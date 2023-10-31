@@ -1,5 +1,5 @@
 import {useEffect, useRef, useState} from "react";
-import {useUserStore} from "../models/types.tsx";
+import {useUserStore} from "../models/store.tsx";
 
 const Navigation = () => {
 

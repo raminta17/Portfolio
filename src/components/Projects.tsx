@@ -4,7 +4,7 @@ import socialMedia2 from '../assets/social_media_2.png'
 import socialMedia3 from '../assets/social_media_3.png'
 import socialMedia4 from '../assets/social_media_4.png'
 import {useInView} from "framer-motion";
-import {useUserStore} from "../models/types.tsx";
+import {useUserStore} from "../models/store.tsx";
 import {useEffect, useRef} from "react";
 
 const Projects = () => {
