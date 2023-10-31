@@ -142,26 +142,28 @@ const Projects = () => {
     ]
     const projectsRef = useRef(null);
     const isProjectsInView = useInView(projectsRef);
-    const {setIsAboutInView, setIsProjectsInView, setIsContactsInView} = useUserStore((state) => ({
+    const {setIsAboutInView, setIsSkillsInView, setIsProjectsInView, setIsContactsInView} = useUserStore((state) => ({
         setIsProjectsInView: state.setIsProjectsInView,
-            setIsContactsInView: state.setIsContactsInView,
-            setIsAboutInView: state.setIsAboutInView
+        setIsSkillsInView: state.setIsSkillsInView,
+        setIsContactsInView: state.setIsContactsInView,
+        setIsAboutInView: state.setIsAboutInView
 
-    }) )
+    }))
 
     useEffect(() => {
-        if(isProjectsInView) {
+        if (isProjectsInView) {
             setIsProjectsInView(true)
             setIsContactsInView(false)
             setIsAboutInView(false)
+            setIsSkillsInView(false)
         }
     }, [isProjectsInView])
 
     return (
         <div id="Projects" className="projects py-5 overflow-hidden" ref={projectsRef}>
-            <div className="content mx-auto p-3 d-flex flex-column gap-4">
-                <h2 className="bottomBorder py-3">PROJECTS</h2>
-                {projects.map((project:ProjectType,index:number) => <SingleProject key={index} project={project}/>)}
+            <div className="content mx-auto p-3 d-flex flex-column gap-5">
+                <h2 className="bottomBorder pb-3">PROJECTS</h2>
+                {projects.map((project: ProjectType, index: number) => <SingleProject key={index} project={project}/>)}
             </div>
 
         </div>

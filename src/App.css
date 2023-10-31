@@ -124,8 +124,14 @@ body {
     background-size: cover;
 
 }
-.main {
+.main, .projects {
     background-color: #2c2b2b;
+}
+#Skills {
+    background: #1c1c1c;
+}
+#Skills .box {
+    background: #2c2b2b;
 }
 .nav {
     gap: 50px;
@@ -162,26 +168,27 @@ nav a {
 }
 .about {
     text-align: justify;
+    /*height: 100vh;*/
 }
 
 .box {
     background-color: #1c1c1c;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    padding: 10px;
+    padding: 30px;
     flex: 1;
 }
 
-.about .box img {
+.skills .box img {
     width: 16px;
     margin-right: 5px;
 }
 
-.about .box ul li i {
+.skills .box ul li i {
     margin-right: 5px;
 }
 .projects {
-    background: #1c1c1c;
+    background: #2c2b2b;
 }
 .projects img, .projects i {
     width: 30px;
@@ -189,7 +196,7 @@ nav a {
     object-fit: contain;
 }
 .projects .box {
-    background: #2c2b2b;
+    background: #1c1c1c;
 }
 .nav a {
     font-size: x-large;

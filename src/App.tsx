@@ -8,6 +8,7 @@ import Footer from "./components/Footer.tsx";
 import {Envelope} from "react-bootstrap-icons";
 import {motion} from "framer-motion";
 import MessageModal from "./components/MessageModal.tsx";
+import Skills from "./components/Skills.tsx";
 
 
 function App() {
@@ -28,10 +29,11 @@ function App() {
     return (
         <>
             <Header setShowModal={setShowModal}/>
-            <div className="main d-flex flex-column gap-4"
+            <div className="main d-flex flex-column"
             >
                 <Navigation/>
                 <About/>
+                <Skills/>
                 <Projects/>
                 {showBtn &&
                     <motion.div

@@ -1,12 +1,11 @@
 import {Modal} from "react-bootstrap";
-import { Dispatch, SetStateAction } from 'react';
+import {Dispatch, SetStateAction} from 'react';
 import {SubmitHandler, useForm} from "react-hook-form";
 
 type TSetBoolean = {
     showModal: boolean
     setShowModal: Dispatch<SetStateAction<boolean>>
 }
-
 
 
 const MessageModal = ({showModal, setShowModal}: TSetBoolean) => {
@@ -19,6 +18,7 @@ const MessageModal = ({showModal, setShowModal}: TSetBoolean) => {
     const {
         register,
         handleSubmit,
+        reset,
         formState: {errors},
     } = useForm<Inputs>();
     const submitEmail: SubmitHandler<Inputs> = async (info) => {
@@ -35,6 +35,11 @@ const MessageModal = ({showModal, setShowModal}: TSetBoolean) => {
         const response = await fetch('http://localhost:8001/sendEmail', options);
         const data = await response.json();
         console.log('data from backend', data)
+        if (data.ok) {
+            setShowModal(false);
+            reset();
+        }
+        if (!data.ok) alert('something went wrong, try again.')
     }
 
     const handleCloseModal = () => {
@@ -42,7 +47,10 @@ const MessageModal = ({showModal, setShowModal}: TSetBoolean) => {
     }
     return (
         <Modal show={showModal}
-               style={{background: 'linear-gradient(184deg, rgba(0,0,0,0.6251750700280112) 100%, rgba(82,78,94,0.9389005602240896) 100%)', paddingRight:0}}
+               style={{
+                   background: 'linear-gradient(184deg, rgba(0,0,0,0.6251750700280112) 100%, rgba(82,78,94,0.9389005602240896) 100%)',
+                   paddingRight: 0
+               }}
                onHide={handleCloseModal}>
             <Modal.Header closeButton>
                 <Modal.Title className="text-black">Get in touch</Modal.Title>

@@ -1,13 +1,10 @@
 import {create} from 'zustand'
 
-// type TUser = {
-//     username: string
-// }
 type TUserStore = {
-    // user: TUser | null
-    // setUser: (data: TUser | null) => void,
     isAboutInView: boolean | null,
     setIsAboutInView: (data: boolean | null) => void,
+    isSkillsInView: boolean | null,
+    setIsSkillsInView: (data: boolean | null) => void,
     isProjectsInView: boolean | null,
     setIsProjectsInView: (data: boolean | null) => void,
     isContactsInView: boolean | null,
@@ -15,10 +12,10 @@ type TUserStore = {
 }
 
 export const useUserStore = create<TUserStore>((set) => ({
-    // user: {username: 'kurmis'},
-    // setUser: (data) => set({user: data}),
     isAboutInView: false,
     setIsAboutInView: (data) => set({isAboutInView: data}),
+    isSkillsInView: false,
+    setIsSkillsInView: (data) => set({isSkillsInView: data}),
     isProjectsInView: false,
     setIsProjectsInView: (data) => set({isProjectsInView: data}),
     isContactsInView: false,

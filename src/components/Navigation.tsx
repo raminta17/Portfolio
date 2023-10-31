@@ -5,12 +5,13 @@ const Navigation = () => {
 
     const [fixed, setFixed] = useState('');
     const navRef = useRef<any | null>(null);
-    const {isAboutInView, isProjectsInView, isContactsInView} = useUserStore(state => ({
+    const {isAboutInView, isSkillsInView, isProjectsInView, isContactsInView} = useUserStore(state => ({
         isAboutInView: state.isAboutInView,
+        isSkillsInView: state.isSkillsInView,
         isProjectsInView : state.isProjectsInView,
         isContactsInView: state.isContactsInView
     }));
-    // console.log('about isInView', isAboutInView)
+    console.log('isSkillsInView in nav',isSkillsInView)
     useEffect(() => {
         const {offsetTop} = navRef.current;
         window.addEventListener('scroll', () => {
@@ -25,15 +26,19 @@ const Navigation = () => {
     return (
         <nav className="d-flex justify-content-center align-items-center nav sm-column" ref={navRef} id={fixed}>
             <div className="navDiv text-center">
-                <a className={isAboutInView ? 'largeNavText' : 'smallNavText'} href="#About">About</a>
+                <a className={isAboutInView ? 'largeNavText' : 'smallNavText'} href="#About">ABOUT</a>
                 <hr/>
             </div>
             <div className="navDiv text-center">
-                <a className={isProjectsInView ? 'largeNavText' : 'smallNavText'} href="#Projects">Projects</a>
+                <a className={isSkillsInView ? 'largeNavText' : 'smallNavText'} href="#Skills">SKILLS</a>
                 <hr/>
             </div>
             <div className="navDiv text-center">
-                <a  className={isContactsInView ? 'largeNavText' : 'smallNavText'}  href="#Contacts">Contacts</a>
+                <a className={isProjectsInView ? 'largeNavText' : 'smallNavText'} href="#Projects">PROJECTS</a>
+                <hr/>
+            </div>
+            <div className="navDiv text-center">
+                <a  className={isContactsInView ? 'largeNavText' : 'smallNavText'}  href="#Contacts">CONTACTS</a>
                 <hr/>
             </div>
 

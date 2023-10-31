@@ -53,7 +53,7 @@ const SingleProject = ({ project }:ProjectType)=>  {
     }
 
     return (
-        <div className="box singleProject p-4 d-flex flex-column gap-4" ref={projectRef} style={style}>
+        <div className="box singleProject d-flex flex-column gap-4" ref={projectRef} style={style}>
             <div className="d-flex sm-column justify-content-between gap-3 w-100">
                 <h4 className="m-0">{project.title}</h4>
                 <div className="d-flex gap-2">{project.techUsed.map((tech: TechType, index: number) => <img key={index} src={tech.logo} alt="" />)}</div>

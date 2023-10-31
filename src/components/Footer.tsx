@@ -9,10 +9,11 @@ const Footer = () => {
 
     const contactsRef = useRef(null);
     const isContactsInView = useInView(contactsRef);
-    const {setIsAboutInView, setIsProjectsInView, setIsContactsInView} = useUserStore((state) => ({
+    const {setIsAboutInView, setIsSkillsInView, setIsProjectsInView, setIsContactsInView} = useUserStore((state) => ({
         setIsProjectsInView: state.setIsProjectsInView,
         setIsContactsInView: state.setIsContactsInView,
-        setIsAboutInView: state.setIsAboutInView
+        setIsAboutInView: state.setIsAboutInView,
+        setIsSkillsInView: state.setIsSkillsInView
 
     }) )
 
@@ -21,6 +22,7 @@ const Footer = () => {
             setIsProjectsInView(false)
             setIsContactsInView(true)
             setIsAboutInView(false)
+            setIsSkillsInView(false)
         }else {
             setIsProjectsInView(true)
             setIsContactsInView(false)
@@ -28,7 +30,7 @@ const Footer = () => {
     }, [isContactsInView])
 
     return (
-        <div id="Contacts" className="parallaxBg footer p-3 d-flex flex-column " ref={contactsRef}>
+        <div id="Contacts" className="parallaxBg footer py-3 d-flex flex-column " ref={contactsRef}>
             <div  className="content mx-auto p-3 d-flex flex-column gap-2">
                 <h3 className="bottomBorder py-3">CONTACTS</h3>
                 <div>
