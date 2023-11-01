@@ -26,19 +26,19 @@ const Navigation = () => {
     return (
         <nav className="d-flex justify-content-center align-items-center nav sm-column" ref={navRef} id={fixed}>
             <div className="navDiv text-center">
-                <a className={isAboutInView ? 'largeNavText' : 'smallNavText'} href="#About">ABOUT</a>
+                <a className={isAboutInView ? 'largeNavText' : 'smallNavText'} href="#About">About</a>
                 <hr/>
             </div>
             <div className="navDiv text-center">
-                <a className={isSkillsInView ? 'largeNavText' : 'smallNavText'} href="#Skills">SKILLS</a>
+                <a className={isSkillsInView ? 'largeNavText' : 'smallNavText'} href="#Skills">Skills</a>
                 <hr/>
             </div>
             <div className="navDiv text-center">
-                <a className={isProjectsInView ? 'largeNavText' : 'smallNavText'} href="#Projects">PROJECTS</a>
+                <a className={isProjectsInView ? 'largeNavText' : 'smallNavText'} href="#Projects">Projects</a>
                 <hr/>
             </div>
             <div className="navDiv text-center">
-                <a  className={isContactsInView ? 'largeNavText' : 'smallNavText'}  href="#Contacts">CONTACTS</a>
+                <a  className={isContactsInView ? 'largeNavText' : 'smallNavText'}  href="#Contacts">Contacts</a>
                 <hr/>
             </div>
 
