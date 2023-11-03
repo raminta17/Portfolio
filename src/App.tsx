@@ -16,6 +16,9 @@ function App() {
     const [showBtn, setShowBtn] = useState(false);
     const [showModal, setShowModal] = useState(false);
 
+    function openModal () {
+        setShowModal(true);
+    }
     useEffect(() => {
         window.addEventListener('scroll', () => {
             if (window.scrollY > 400) {
@@ -37,7 +40,7 @@ function App() {
                 <Projects/>
                 {showBtn &&
                     <motion.div
-                        onClick={() => setShowModal(true)}
+                        onClick={openModal}
                         className="getInTouchBtn fixedBtn"
                         whileHover={{scale: 1.1}}
                         transition={{type: "spring", stiffness: 400, damping: 10}}

@@ -1,8 +1,6 @@
 import {Modal} from "react-bootstrap";
 import {useRef, useState, useEffect} from "react";
 import {PlusCircle} from "react-bootstrap-icons";
-import {ArrowRightCircle} from "react-bootstrap-icons";
-import {ArrowLeftCircle} from "react-bootstrap-icons";
 import {XLg} from "react-bootstrap-icons";
 import {useInView} from "framer-motion"
 
@@ -75,14 +73,13 @@ const SingleProject = ({ project }:ProjectType)=>  {
                 </div>
             </div>
 
-
             <Modal  className="modalProjectImages" show={showModal} style={{display: 'flex', alignItems: 'center', background: 'linear-gradient(184deg, rgba(0,0,0,0.6251750700280112) 100%, rgba(82,78,94,0.9389005602240896) 100%)'}} onHide={handleCloseModal}>
               <div className="d-flex">
-                  <div onClick={() => changeImageIndex('left')} className="arrow"><ArrowLeftCircle/></div>
+                  <div onClick={() => changeImageIndex('left')} className="arrow"><i className="fa-solid fa-chevron-left"></i></div>
                   <div className="imageModal d-flex flex-column gap-2">
                       <img src={project.images[imageIndex]} alt=""/>
                   </div>
-                  <div onClick={() => changeImageIndex('right')} className="arrow"><ArrowRightCircle/></div>
+                  <div onClick={() => changeImageIndex('right')} className="arrow"><i className="fa-solid fa-chevron-right"></i></div>
               </div>
                 <XLg onClick={() => handleCloseModal()} className="close"/>
             </Modal>

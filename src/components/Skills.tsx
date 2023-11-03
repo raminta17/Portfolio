@@ -91,6 +91,7 @@ const Skills = () => {
                         <ul className="p-3">
                             <li>High sense of responsibility</li>
                             <li>Adaptability</li>
+                            <li>Loyalty</li>
                             <li>Professionalism</li>
                             <li>Team player</li>
                             <li>Problem-solving</li>

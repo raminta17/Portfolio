@@ -1,8 +1,12 @@
 import SingleProject from "./SingleProject.tsx";
-import socialMedia1 from '../assets/social_media_1.png'
-import socialMedia2 from '../assets/social_media_2.png'
-import socialMedia3 from '../assets/social_media_3.png'
-import socialMedia4 from '../assets/social_media_4.png'
+
+import SM_posts from '../assets/posts.png'
+import SM_createPost from '../assets/createPostModal.png'
+import SM_messages from '../assets/messages.png'
+import SM_messageModal from '../assets/messagModal.png'
+import SM_profileRes from '../assets/profileResponsive.png'
+import SM_usersRes from '../assets/usersResponsive.png'
+import SM_startPage from '../assets/startPAge.png'
 import {useInView} from "framer-motion";
 import {useUserStore} from "../models/store.tsx";
 import {useEffect, useRef} from "react";
@@ -49,9 +53,13 @@ const Projects = () => {
                 {
                     title: 'CSS',
                     logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/CSS3_logo.svg/800px-CSS3_logo.svg.png'
+                },
+                {
+                    title: 'Bootstrap',
+                    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/1280px-Bootstrap_logo.svg.png'
                 }
             ],
-            images: [socialMedia1, socialMedia2, socialMedia3, socialMedia4],
+            images: [SM_posts, SM_startPage, SM_messages, SM_createPost, SM_messageModal, SM_profileRes, SM_usersRes],
             projectInfo: ['Users registration, auto login', 'Live chats', 'Live tracking of online users', 'Live post updates', 'Responsive design'],
             frontEnd: 'https://github.com/raminta17/final_boss_frontEnd',
             backEnd: 'https://github.com/raminta17/final_boss_backEnd'
