@@ -33,7 +33,7 @@ const Navigation = () => {
     }
 
     return (
-        <nav className={`d-flex justify-content-center align-items-center nav sm-column ${navClassNames}`} ref={navRef} id={fixed}>
+        <nav className={`align-items-center nav sm-column ${navClassNames}`} ref={navRef} id={fixed}>
             <div className="burgerMenu p-3" onClick={handleResponsiveMenu}>
                 <i className="fa-solid fa-bars"></i>
             </div>
