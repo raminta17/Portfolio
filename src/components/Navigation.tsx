@@ -6,17 +6,18 @@ const Navigation = () => {
     const [navClassNames, setNavClassNames] = useState('nav');
     const [fixed, setFixed] = useState('');
     const navRef = useRef<any | null>(null);
-    const {isAboutInView, isSkillsInView, isProjectsInView, isContactsInView} = useUserStore(state => ({
+    const {isHomeInView, isAboutInView, isSkillsInView, isProjectsInView, isContactsInView} = useUserStore(state => ({
         isAboutInView: state.isAboutInView,
+        isHomeInView: state.isHomeInView,
         isSkillsInView: state.isSkillsInView,
         isProjectsInView : state.isProjectsInView,
         isContactsInView: state.isContactsInView
     }));
 
     useEffect(() => {
-        const {offsetTop} = navRef.current;
+        // const {offsetTop} = navRef.current;
         window.addEventListener('scroll', () => {
-            if (window.scrollY > offsetTop) {
+            if (window.scrollY > 0) {
                 setFixed('fixed');
             } else {
                 setFixed('');
@@ -36,19 +37,23 @@ const Navigation = () => {
             <div className="burgerMenu p-3" onClick={handleResponsiveMenu}>
                 <i className="fa-solid fa-bars"></i>
             </div>
-            <div className="navDiv text-center">
+            <div className="navDiv text-center" onClick={()=> setNavClassNames('nav')}>
+                <a className={isHomeInView ? 'largeNavText' : 'smallNavText'} href="#Home">Home</a>
+                <hr/>
+            </div>
+            <div className="navDiv text-center" onClick={()=> setNavClassNames('nav')}>
                 <a className={isAboutInView ? 'largeNavText' : 'smallNavText'} href="#About">About</a>
                 <hr/>
             </div>
-            <div className="navDiv text-center">
+            <div className="navDiv text-center" onClick={()=> setNavClassNames('nav')}>
                 <a className={isSkillsInView ? 'largeNavText' : 'smallNavText'} href="#Skills">Skills</a>
                 <hr/>
             </div>
-            <div className="navDiv text-center">
+            <div className="navDiv text-center" onClick={()=> setNavClassNames('nav')}>
                 <a className={isProjectsInView ? 'largeNavText' : 'smallNavText'} href="#Projects">Projects</a>
                 <hr/>
             </div>
-            <div className="navDiv text-center">
+            <div className="navDiv text-center" onClick={()=> setNavClassNames('nav')}>
                 <a  className={isContactsInView ? 'largeNavText' : 'smallNavText'}  href="#Contacts">Contacts</a>
                 <hr/>
             </div>

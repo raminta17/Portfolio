@@ -150,7 +150,8 @@ const Projects = () => {
     ]
     const projectsRef = useRef(null);
     const isProjectsInView = useInView(projectsRef);
-    const {setIsAboutInView, setIsSkillsInView, setIsProjectsInView, setIsContactsInView} = useUserStore((state) => ({
+    const {setIsHomeInView, setIsAboutInView, setIsSkillsInView, setIsProjectsInView, setIsContactsInView} = useUserStore((state) => ({
+        setIsHomeInView: state.setIsHomeInView,
         setIsProjectsInView: state.setIsProjectsInView,
         setIsSkillsInView: state.setIsSkillsInView,
         setIsContactsInView: state.setIsContactsInView,
@@ -164,6 +165,7 @@ const Projects = () => {
             setIsContactsInView(false)
             setIsAboutInView(false)
             setIsSkillsInView(false)
+            setIsHomeInView(false)
         }
     }, [isProjectsInView])
 

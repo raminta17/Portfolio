@@ -327,7 +327,7 @@ a {
     transition: var(--transition);
 }
 
-.arrow:hover {
+.arrow:hover, .close:hover {
     color: grey;
 }
 
@@ -355,12 +355,17 @@ a {
     color: #fb9e25;
     font-size: small;
 }
+/*#About, #Skills {*/
+/*    height: 100vh;*/
+/*}*/
 .close {
     font-size: 50px;
     position: absolute;
     right: 0;
     top: -50px;
     z-index: 2000;
+    transition: var(--transition);
+    font-weight: bold;
 }
 .modal {
     --bs-modal-margin: 0;
@@ -375,7 +380,7 @@ a {
 .modalProjectImages .modal-dialog {
     max-width: 90vw;
 }
-.burgerMenu {
+.burgerMenu,.navDiv {
     display:none;
 }
 
@@ -428,7 +433,14 @@ a {
         display: none;
     }
     .nav {
-        gap: 5px;
+        gap: 0px;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: transparent;
+    }
+    .responsive {
+        background-color: #2c2b2b;
     }
     .navDiv {
         padding: 10px;
@@ -442,11 +454,17 @@ a {
     .burgerMenu {
         display: block;
     }
-    .navDiv {
-        display: none;
-    }
+    /*.navDiv {*/
+    /*    display: none;*/
+    /*    background-color: #2c2b2b;*/
+    /*    width: 100%;*/
+    /*}*/
     .responsive .navDiv {
         display: block;
+    }
+    .close {
+        font-size: large;
+         margin: 20px;
     }
 }
 @media (min-width: 768px) {

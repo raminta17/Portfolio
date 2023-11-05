@@ -11,7 +11,8 @@ const About = () => {
 
     const isAboutInView = useInView(aboutRef);
     const isTextInView = useInView(textRef, { once: true });
-    const {setIsAboutInView, setIsSkillsInView, setIsProjectsInView, setIsContactsInView} = useUserStore((state) => ({
+    const {setIsHomeInView, setIsAboutInView, setIsSkillsInView, setIsProjectsInView, setIsContactsInView} = useUserStore((state) => ({
+        setIsHomeInView: state.setIsHomeInView,
         setIsProjectsInView: state.setIsProjectsInView,
         setIsSkillsInView: state.setIsSkillsInView,
         setIsContactsInView: state.setIsContactsInView,
@@ -25,6 +26,7 @@ const About = () => {
             setIsContactsInView(false)
             setIsSkillsInView(false)
             setIsAboutInView(true)
+            setIsHomeInView(false)
         }
     }, [isAboutInView])
 
@@ -39,7 +41,7 @@ const About = () => {
 
     return (
         <div id="About" className="py-5 d-flex flex-column about overflow-hidden">
-            <div className="content mx-auto p-3 d-flex flex-column gap-5 about " ref={aboutRef}>
+            <div className="content mx-auto p-3 d-flex flex-column gap-5 about" ref={aboutRef}>
                 <h2 className="bottomBorder pb-3" >ABOUT</h2>
                 <div
                     style={styleAbout}

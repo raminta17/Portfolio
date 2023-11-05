@@ -1,5 +1,6 @@
-import React, {useEffect, useState} from "react";
-import { motion } from "framer-motion";
+import React, {useEffect, useRef, useState} from "react";
+import {motion, useInView} from "framer-motion";
+import {useUserStore} from "../models/store.tsx";
 
 type ShowModalType = {
     setShowModal: React.Dispatch<React.SetStateAction<boolean>>
@@ -8,6 +9,28 @@ type ShowModalType = {
 const Header = ({setShowModal}:ShowModalType) => {
 
     const [showArrow, setShowArrow] = useState(true);
+    const homeRef = useRef(null);
+
+
+    const isHomeInView = useInView(homeRef);
+    const {setIsHomeInView, setIsAboutInView, setIsSkillsInView, setIsProjectsInView, setIsContactsInView} = useUserStore((state) => ({
+        setIsHomeInView: state.setIsHomeInView,
+        setIsProjectsInView: state.setIsProjectsInView,
+        setIsSkillsInView: state.setIsSkillsInView,
+        setIsContactsInView: state.setIsContactsInView,
+        setIsAboutInView: state.setIsAboutInView
+
+    }) )
+
+    useEffect(() => {
+        if (isHomeInView) {
+            setIsProjectsInView(false)
+            setIsContactsInView(false)
+            setIsSkillsInView(false)
+            setIsAboutInView(false)
+            setIsHomeInView(true)
+        }
+    }, [isHomeInView])
 
     useEffect(() => {
         window.addEventListener('scroll', () => {
@@ -20,7 +43,7 @@ const Header = ({setShowModal}:ShowModalType) => {
     }, []);
 
     return (
-        <div className="parallaxBg header centered text-center flex-column gap-5">
+        <div id="Home" className="parallaxBg header centered text-center flex-column gap-5" ref={homeRef}>
             <div className="d-flex justify-content-center align-items-center flex-column gap-2">
                 <h1>Hi there, I'm Raminta</h1>
                 <h2>Full Stack Developer</h2>

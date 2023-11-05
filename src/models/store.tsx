@@ -1,6 +1,8 @@
 import {create} from 'zustand'
 
 type TUserStore = {
+    isHomeInView: boolean | null,
+    setIsHomeInView: (data: boolean | null) => void,
     isAboutInView: boolean | null,
     setIsAboutInView: (data: boolean | null) => void,
     isSkillsInView: boolean | null,
@@ -12,6 +14,8 @@ type TUserStore = {
 }
 
 export const useUserStore = create<TUserStore>((set) => ({
+    isHomeInView: false,
+    setIsHomeInView: (data) => set({isHomeInView: data}),
     isAboutInView: false,
     setIsAboutInView: (data) => set({isAboutInView: data}),
     isSkillsInView: false,

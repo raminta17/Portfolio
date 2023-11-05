@@ -9,7 +9,8 @@ const Footer = () => {
 
     const contactsRef = useRef(null);
     const isContactsInView = useInView(contactsRef);
-    const {setIsAboutInView, setIsSkillsInView, setIsProjectsInView, setIsContactsInView} = useUserStore((state) => ({
+    const {setIsHomeInView, setIsAboutInView, setIsSkillsInView, setIsProjectsInView, setIsContactsInView} = useUserStore((state) => ({
+        setIsHomeInView: state.setIsHomeInView,
         setIsProjectsInView: state.setIsProjectsInView,
         setIsContactsInView: state.setIsContactsInView,
         setIsAboutInView: state.setIsAboutInView,
@@ -23,6 +24,7 @@ const Footer = () => {
             setIsContactsInView(true)
             setIsAboutInView(false)
             setIsSkillsInView(false)
+            setIsHomeInView(false)
         }else {
             setIsProjectsInView(true)
             setIsContactsInView(false)

@@ -13,7 +13,8 @@ const Skills = () => {
     const [styleSoftSkill, setStyleSoftSkill] = useState({});
     const isTechSkillInView = useInView(techSkillRef,{ once: true });
     const isSoftSkillInView = useInView(softSkillRef,{ once: true });
-    const {setIsAboutInView, setIsSkillsInView, setIsProjectsInView, setIsContactsInView} = useUserStore((state) => ({
+    const {setIsHomeInView, setIsAboutInView, setIsSkillsInView, setIsProjectsInView, setIsContactsInView} = useUserStore((state) => ({
+        setIsHomeInView: state.setIsHomeInView,
         setIsProjectsInView: state.setIsProjectsInView,
         setIsSkillsInView: state.setIsSkillsInView,
         setIsContactsInView: state.setIsContactsInView,
@@ -29,6 +30,7 @@ const Skills = () => {
             setIsContactsInView(false)
             setIsSkillsInView(true)
             setIsAboutInView(false)
+            setIsHomeInView(false)
         }
     }, [isSkillsInView])
 
