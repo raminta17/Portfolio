@@ -32,7 +32,10 @@ const Navigation = () => {
     }
 
     return (
-        <nav className="d-flex justify-content-center align-items-center nav sm-column" ref={navRef} id={fixed}>
+        <nav className={`d-flex justify-content-center align-items-center nav sm-column ${navClassNames}`} ref={navRef} id={fixed}>
+            <div className="burgerMenu p-3" onClick={handleResponsiveMenu}>
+                <i className="fa-solid fa-bars"></i>
+            </div>
             <div className="navDiv text-center">
                 <a className={isAboutInView ? 'largeNavText' : 'smallNavText'} href="#About">About</a>
                 <hr/>
@@ -49,10 +52,6 @@ const Navigation = () => {
                 <a  className={isContactsInView ? 'largeNavText' : 'smallNavText'}  href="#Contacts">Contacts</a>
                 <hr/>
             </div>
-            <div className="burgerMenu" onClick={handleResponsiveMenu}>
-                <i className="fa-solid fa-bars"></i>
-            </div>
-
         </nav>
     );
 };

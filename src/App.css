@@ -55,6 +55,9 @@ body {
 }
 .burgerMenu {
     display: none;
+    padding: 10px;
+    align-self: end;
+    font-size: x-large;
 }
 @keyframes arrow
 {
@@ -372,6 +375,10 @@ a {
 .modalProjectImages .modal-dialog {
     max-width: 90vw;
 }
+.burgerMenu {
+    display:none;
+}
+
 @keyframes bouncingBtn {
     from {
         bottom: 20px;
@@ -433,6 +440,12 @@ a {
         font-size: large;
     }
     .burgerMenu {
+        display: block;
+    }
+    .navDiv {
+        display: none;
+    }
+    .responsive .navDiv {
         display: block;
     }
 }
