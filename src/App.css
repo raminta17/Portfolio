@@ -97,10 +97,13 @@ body {
 }
 .parallaxBg {
     background-image: linear-gradient(184deg, rgba(0, 0, 0, 0.7204131652661064) 0%, rgba(82, 78, 94, 0.9389005602240896) 100%), url("https://www.findingtheuniverse.com/wp-content/uploads/2021/04/Sunset-over-Glencoe-and-Glen-Etive_by_Laurence-Norah-2.jpg");
-    background-attachment: fixed;
+    /*background-attachment: fixed;*/
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+.footer {
+    background-attachment: fixed;
 }
 .profilePhoto {
     padding: 10px;
@@ -121,6 +124,7 @@ body {
     overflow: hidden;
     width: 200px;
     height:200px;
+    background-size: cover;
 }
 .profilePhoto div {
     width: 100%;
@@ -128,7 +132,6 @@ body {
     transition: var(--transition);
     background-position: center;
     background-size: cover;
-
 }
 .main, .projects {
     background-color: #2c2b2b;
@@ -142,7 +145,7 @@ body {
 .nav {
     gap: 50px;
     background: #2c2b2b;
-    z-index: 1;
+    z-index: 2;
     display: flex;
     justify-content: center;
 }

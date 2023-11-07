@@ -48,9 +48,8 @@ const About = () => {
                     className="d-flex align-items-center sm-column gap-5" ref={textRef}>
                     <div className="profilePhoto">
                         <div className="profilePhotoWrapper">
-                            <div style={{background: `url(${profilePhoto})`}}/>
+                            <div style={{backgroundImage: `url(${profilePhoto})`}}/>
                         </div>
-
                     </div>
                     <div  className="d-flex flex-column gap-3">
                         <div >After a 7 year career as a physiotherapist in Scotland, I discovered my passion for software
