@@ -1,34 +1,34 @@
-import {useEffect, useRef, useState} from "react";
-import {useInView} from "framer-motion";
+import {useEffect, useState} from "react";
+import {motion} from "framer-motion";
+import { useInView } from 'react-intersection-observer';
 import {useUserStore} from "../models/store.tsx";
 import profilePhoto from "../assets/Raminta_photo_square.jpg"
+import {Github, Linkedin, Download} from "react-bootstrap-icons";
 
 const About = () => {
 
-    const aboutRef = useRef(null);
-    const textRef = useRef(null);
+    // const aboutRef = useRef(null);
+    // const textRef = useRef(null);
     const [styleAbout, setStyleAbout] = useState({});
-
-    const isAboutInView = useInView(aboutRef);
-    const isTextInView = useInView(textRef, { once: true });
+    const {ref, inView} = useInView({threshold: 0.5});
+    const {ref: textRef, inView: isTextInView} = useInView({triggerOnce: true});
     const {setIsHomeInView, setIsAboutInView, setIsSkillsInView, setIsProjectsInView, setIsContactsInView} = useUserStore((state) => ({
         setIsHomeInView: state.setIsHomeInView,
         setIsProjectsInView: state.setIsProjectsInView,
         setIsSkillsInView: state.setIsSkillsInView,
         setIsContactsInView: state.setIsContactsInView,
         setIsAboutInView: state.setIsAboutInView
-
     }) )
 
     useEffect(() => {
-        if (isAboutInView) {
+        if (inView) {
             setIsProjectsInView(false)
             setIsContactsInView(false)
             setIsSkillsInView(false)
             setIsAboutInView(true)
             setIsHomeInView(false)
         }
-    }, [isAboutInView])
+    }, [inView])
 
     useEffect(() => {
         setStyleAbout({
@@ -41,7 +41,7 @@ const About = () => {
 
     return (
         <div id="About" className="py-5 d-flex flex-column about overflow-hidden">
-            <div className="content mx-auto p-3 d-flex flex-column gap-5 about" ref={aboutRef}>
+            <div className="content mx-auto p-3 d-flex flex-column gap-5 about" ref={ref}>
                 <h2 className="bottomBorder pb-3" >ABOUT</h2>
                 <div
                     style={styleAbout}
@@ -52,6 +52,29 @@ const About = () => {
                         </div>
                     </div>
                     <div  className="d-flex flex-column gap-3">
+                        <div className="d-flex gap-3 aboutBtns">
+                            <a href="https://github.com/raminta17" target="_blank"> <motion.div
+                                className="getInTouchBtn"
+                                whileHover={{ scale: 1.1 }}
+                                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                            >
+                              <Github/>
+                            </motion.div></a>
+                            <a href="https://www.linkedin.com/in/raminta-alisauskaite" target="_blank"> <motion.div
+                                className="getInTouchBtn"
+                                whileHover={{ scale: 1.1 }}
+                                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                            >
+                              <Linkedin/>
+                            </motion.div></a>
+                            <motion.div
+                                className="getInTouchBtn"
+                                whileHover={{ scale: 1.1 }}
+                                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                            >
+                                <Download/>
+                            </motion.div>
+                        </div>
                         <div >After a 7 year career as a physiotherapist in Scotland, I discovered my passion for software
                             development; therefore, I decided to embark on a new career path. I am currently enrolled in a rigorous
                             six-month full-time course focused on JavaScript, TypeScript, React, and Node.js. This journey has been

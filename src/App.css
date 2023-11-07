@@ -2,6 +2,7 @@
     --transition: 0.3s ease-in-out;
     --lightTextColor: #d2d2d2;
     --bottom-border: 1px solid #e5e3e3;
+    --specOrangeColor: #ffc477;
 }
 
 * {
@@ -59,6 +60,22 @@ body {
     align-self: end;
     font-size: x-large;
 }
+
+.aboutBtns .getInTouchBtn{
+    width: 60px;
+    height: 60px;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffc477;
+}
+.aboutBtns .getInTouchBtn:hover a{
+    color: #1c1c1c;
+}
+.footer a:hover {
+    text-decoration: underline;
+}
 @keyframes arrow
 {
     0% {opacity:0}
@@ -97,7 +114,6 @@ body {
 }
 .parallaxBg {
     background-image: linear-gradient(184deg, rgba(0, 0, 0, 0.7204131652661064) 0%, rgba(82, 78, 94, 0.9389005602240896) 100%), url("https://www.findingtheuniverse.com/wp-content/uploads/2021/04/Sunset-over-Glencoe-and-Glen-Etive_by_Laurence-Norah-2.jpg");
-    /*background-attachment: fixed;*/
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -177,9 +193,9 @@ nav a {
 .content {
     width: 75%;
 }
-.about {
-    text-align: justify;
-}
+/*.about {*/
+/*    text-align: justify;*/
+/*}*/
 
 .box {
     background-color: #1c1c1c;
@@ -190,12 +206,14 @@ nav a {
 }
 
 .skills .box img {
-    width: 16px;
-    margin-right: 5px;
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
 }
 
-.skills .box ul li i {
-    margin-right: 5px;
+.skills .box i {
+    font-size: 40px;
+    height: 40px;
 }
 .projects {
     background: #2c2b2b;
@@ -271,7 +289,7 @@ nav a {
     font-style: italic;
 }
 a {
-    color: #cc9f52;
+    color: var(--specOrangeColor);
     text-decoration: none;
     transition: var(--transition);
     cursor: pointer;
@@ -283,7 +301,6 @@ a {
 .mainImage img {
     width: 100%;
     height: 100%;
-    /*object-fit: contain;*/
 }
 .projectImages {
     position: relative;
@@ -337,7 +354,7 @@ a {
 }
 
 .footer .i {
-    color: #cc9f52;
+    color: var(--specOrangeColor);
 }
 
 .profileImg {
@@ -360,9 +377,6 @@ a {
     color: #fb9e25;
     font-size: small;
 }
-/*#About, #Skills {*/
-/*    height: 100vh;*/
-/*}*/
 .close {
     font-size: 50px;
     position: absolute;
@@ -419,7 +433,9 @@ a {
     .box {
         flex-direction: column;
     }
-
+    .skills {
+        flex-direction: column;
+    }
     .singleProject {
         align-items: start;
     }
@@ -428,9 +444,7 @@ a {
     .content {
         width: 100%;
     }
-    .skills {
-        flex-direction: column;
-    }
+
     .sm-column {
         flex-direction: column;
     }

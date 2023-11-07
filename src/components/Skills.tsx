@@ -1,18 +1,15 @@
-import {useEffect, useState, useRef} from "react";
-import {useInView} from "framer-motion";
+import {useEffect, useState} from "react";
+import { useInView } from 'react-intersection-observer';
 import {useUserStore} from "../models/store.tsx";
 
 
 const Skills = () => {
 
-    const skillsRef = useRef(null);
-    const techSkillRef = useRef(null);
-    const softSkillRef = useRef(null);
-    const isSkillsInView = useInView(skillsRef);
+    const {ref: skillsRef, inView: isSkillsInView} = useInView({threshold:0.5});
     const [styleTechSkill, setStyleTechSkill] = useState({});
     const [styleSoftSkill, setStyleSoftSkill] = useState({});
-    const isTechSkillInView = useInView(techSkillRef,{ once: true });
-    const isSoftSkillInView = useInView(softSkillRef,{ once: true });
+    const {ref: techSkillRef, inView: isTechSkillInView} = useInView({ triggerOnce: true });
+    const {ref: softSkillRef, inView:isSoftSkillInView} = useInView({ triggerOnce: true });
     const {setIsHomeInView, setIsAboutInView, setIsSkillsInView, setIsProjectsInView, setIsContactsInView} = useUserStore((state) => ({
         setIsHomeInView: state.setIsHomeInView,
         setIsProjectsInView: state.setIsProjectsInView,
@@ -58,33 +55,33 @@ const Skills = () => {
                          style={styleTechSkill}
                     >
                         <h4 className="bottomBorder py-2 pb-3">Technical Skills</h4>
-                        <ul className="p-3">
-                            <li><i className="fa-brands fa-html5 text-danger"></i>HTML</li>
-                            <li><i className="fa-brands fa-css3-alt text-primary"></i>CSS</li>
-                            <li><img
+                        <div className="p-3 d-flex flex-wrap gap-4 justify-content-center">
+                            <div className="d-flex flex-column gap-2 align-items-center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/800px-HTML5_Badge.svg.png"></img>HTML</div>
+                            <div className="d-flex flex-column gap-2 align-items-center"><i className="fa-brands fa-css3-alt text-primary"></i>CSS</div>
+                            <div className="d-flex flex-column gap-2 align-items-center"><img
                                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Sass_Logo_Color.svg/1280px-Sass_Logo_Color.svg.png"
-                                alt=""/>SCSS/SASS</li>
-                            <li><i className="fa-brands fa-js text-warning"></i>Javascript</li>
-                            <li><img
+                                alt=""/>SCSS/SASS</div>
+                            <div className="d-flex flex-column gap-2 align-items-center"><i className="fa-brands fa-js text-warning"></i>Javascript</div>
+                            <div className="d-flex flex-column gap-2 align-items-center"><img
                                 src="https://cdn.iconscout.com/icon/free/png-256/free-typescript-1174965.png?f=webp"
                                 alt=""/>Typescript
-                            </li>
-                            <li><img
+                            </div>
+                            <div className="d-flex flex-column gap-2 align-items-center"><img
                                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png"
-                                alt=""/>React</li>
-                            <li><i className="fa-brands fa-node-js text-success"></i>Node.js</li>
-                            <li><img
+                                alt=""/>React</div>
+                            <div className="d-flex flex-column gap-2 align-items-center"><i className="fa-brands fa-node-js text-success"></i>Node.js</div>
+                            <div className="d-flex flex-column gap-2 align-items-center"><img
                                 src="https://git-scm.com/images/logos/downloads/Git-Icon-Black.png"
-                                alt=""/>Git</li>
-                            <li><img
+                                alt=""/>Git</div>
+                            <div className="d-flex flex-column gap-2 align-items-center"><img
                                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/1280px-Bootstrap_logo.svg.png"
-                                alt=""/>Bootstrap</li>
-                            <li><img
+                                alt=""/>Bootstrap</div>
+                            <div className="d-flex flex-column gap-2 align-items-center"><img
                                 src="https://cdn.icon-icons.com/icons2/2415/PNG/512/mongodb_original_logo_icon_146424.png"
                                 alt=""/>MongoDB
-                            </li>
-                            <li><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Socket-io.svg/2048px-Socket-io.svg.png" alt=""/>Socket.io</li>
-                        </ul>
+                            </div>
+                            <div className="d-flex flex-column gap-2 align-items-center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Socket-io.svg/2048px-Socket-io.svg.png" alt=""/>Socket.io</div>
+                        </div>
                     </div>
                     <div className="box p-4" ref={softSkillRef}
                          style={styleSoftSkill}

@@ -1,5 +1,4 @@
 import SingleProject from "./SingleProject.tsx";
-
 import SM_posts from '../assets/posts.png'
 import SM_createPost from '../assets/createPostModal.png'
 import SM_messages from '../assets/messages.png'
@@ -7,9 +6,13 @@ import SM_messageModal from '../assets/messagModal.png'
 import SM_profileRes from '../assets/profileResponsive.png'
 import SM_usersRes from '../assets/usersResponsive.png'
 import SM_startPage from '../assets/startPAge.png'
-import {useInView} from "framer-motion";
+import BG_register from '../assets/BattleGame/registerPage.png';
+import BG_prepare1 from '../assets/BattleGame/preparationPage1.png';
+import BG_prepare2 from '../assets/BattleGame/prepare2.png';
+import BG_battle from '../assets/BattleGame/battleArena.png';
+import { useInView } from 'react-intersection-observer';
 import {useUserStore} from "../models/store.tsx";
-import {useEffect, useRef} from "react";
+import {useEffect} from "react";
 
 const Projects = () => {
 
@@ -92,7 +95,7 @@ const Projects = () => {
                     logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/CSS3_logo.svg/800px-CSS3_logo.svg.png'
                 }
             ],
-            images: ['https://user-images.githubusercontent.com/62699647/272304705-2e899bea-c5a5-49ce-b44e-07edb7e1795d.png', 'https://user-images.githubusercontent.com/62699647/272305152-99abd6e8-b5e7-4aa1-9e26-626aaf48b506.png', 'https://user-images.githubusercontent.com/62699647/272306816-430dcbc8-03ce-4ade-ac78-fd894f96eaf4.png'],
+            images: [BG_prepare1,BG_register, BG_prepare2, BG_battle],
             projectInfo: ['Players registration', 'Random battle inventory generation', 'Live tracking of online players', 'Live invitations to play', 'Timer on players turn during battle'],
             frontEnd: 'https://github.com/raminta17/battle_game_frontEnd',
             backEnd: 'https://github.com/raminta17/battle_game_backEnd'
@@ -148,8 +151,7 @@ const Projects = () => {
             backEnd: 'https://github.com/raminta17/tamagotchi_Back-End'
         }
     ]
-    const projectsRef = useRef(null);
-    const isProjectsInView = useInView(projectsRef);
+    const {ref: projectsRef, inView: isProjectsInView} = useInView({threshold:0.2});
     const {setIsHomeInView, setIsAboutInView, setIsSkillsInView, setIsProjectsInView, setIsContactsInView} = useUserStore((state) => ({
         setIsHomeInView: state.setIsHomeInView,
         setIsProjectsInView: state.setIsProjectsInView,

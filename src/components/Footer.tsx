@@ -9,14 +9,20 @@ const Footer = () => {
 
     const contactsRef = useRef(null);
     const isContactsInView = useInView(contactsRef);
-    const {setIsHomeInView, setIsAboutInView, setIsSkillsInView, setIsProjectsInView, setIsContactsInView} = useUserStore((state) => ({
+    const {
+        setIsHomeInView,
+        setIsAboutInView,
+        setIsSkillsInView,
+        setIsProjectsInView,
+        setIsContactsInView
+    } = useUserStore((state) => ({
         setIsHomeInView: state.setIsHomeInView,
         setIsProjectsInView: state.setIsProjectsInView,
         setIsContactsInView: state.setIsContactsInView,
         setIsAboutInView: state.setIsAboutInView,
         setIsSkillsInView: state.setIsSkillsInView
 
-    }) )
+    }))
 
     useEffect(() => {
         if (isContactsInView) {
@@ -25,7 +31,7 @@ const Footer = () => {
             setIsAboutInView(false)
             setIsSkillsInView(false)
             setIsHomeInView(false)
-        }else {
+        } else {
             setIsProjectsInView(true)
             setIsContactsInView(false)
         }
@@ -33,7 +39,7 @@ const Footer = () => {
 
     return (
         <div id="Contacts" className="parallaxBg footer py-3 d-flex flex-column " ref={contactsRef}>
-            <div  className="content mx-auto p-3 d-flex flex-column gap-2">
+            <div className="content mx-auto p-3 d-flex flex-column gap-2">
                 <h3 className="bottomBorder py-3">CONTACTS</h3>
                 <div>
                     <div className="d-flex gap-4">
@@ -44,11 +50,13 @@ const Footer = () => {
                             <h4>Raminta Ališauskaitė</h4>
                             <div className="d-flex gap-2 align-items-center">
                                 <Linkedin className="i"/>
-                                <a className="m-0">www.linkedin.com/in/raminta-alisauskaite</a>
+                                <a href="https://www.linkedin.com/in/raminta-alisauskaite" target="_blank"
+                                   className="m-0">www.linkedin.com/in/raminta-alisauskaite</a>
                             </div>
                             <div className="d-flex gap-2 align-items-center">
                                 <Github className="i"/>
-                                <a className="m-0">github.com/raminta17</a>
+                                <a href="https://github.com/raminta17" target="_blank"
+                                   className="m-0">github.com/raminta17</a>
                             </div>
                         </div>
                     </div>
