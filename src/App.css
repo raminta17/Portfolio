@@ -196,7 +196,11 @@ nav a {
 /*.about {*/
 /*    text-align: justify;*/
 /*}*/
-
+.techSkills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 .box {
     background-color: #1c1c1c;
     border-radius: 10px;
@@ -482,6 +486,13 @@ a {
     .close {
         font-size: large;
          margin: 20px;
+    }
+}
+@media (max-width: 440px) {
+    .techSkills {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
     }
 }
 @media (min-width: 768px) {

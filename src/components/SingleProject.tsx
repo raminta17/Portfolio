@@ -11,12 +11,13 @@ type ProjectType = {
         images: string[],
         projectInfo: string[],
         frontEnd: string,
-        backEnd: string | null
+        backEnd: string | null,
+        try: TechType | null
     }
 }
 type TechType = {
     title: string,
-    logo: string
+    link: string
 }
 
 
@@ -54,7 +55,7 @@ const SingleProject = ({ project }:ProjectType)=>  {
         <div className="box singleProject d-flex flex-column gap-4" ref={projectRef} style={style}>
             <div className="d-flex sm-column justify-content-between gap-3 w-100">
                 <h4 className="m-0">{project.title}</h4>
-                <div className="d-flex gap-2">{project.techUsed.map((tech: TechType, index: number) => <img key={index} src={tech.logo} alt="" />)}</div>
+                <div className="d-flex gap-2">{project.techUsed.map((tech: TechType, index: number) => <img key={index} src={tech.link} alt="" />)}</div>
             </div>
             <div className="d-flex gap-2 sm-column">
                 <div className="d-flex flex-column gap-3 f1">
@@ -63,6 +64,15 @@ const SingleProject = ({ project }:ProjectType)=>  {
                         <a href={project.frontEnd} target="_blank">Front-End</a>
                         {project.backEnd && <a href={project.backEnd} target="_blank">Back-End</a>}
                     </div>
+                    {project.try && <div className="d-flex gap-5">
+                        <b>TRY:</b>
+                        <div>
+                            <a href={project.try.link} target="_blank">Play it </a>
+                            <span>{project.try.title}</span>
+                        </div>
+
+
+                    </div>}
                     <ul className="px-3">
                         {project.projectInfo.map((info: string, index: number) => <li key={index}>{info}</li>)}
                     </ul>
