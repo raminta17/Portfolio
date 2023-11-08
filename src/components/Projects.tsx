@@ -13,6 +13,9 @@ import BG_battle from '../assets/BattleGame/battleArena.png';
 import MONOP_start from '../assets/monopoly/start.png';
 import MONOP_game from '../assets/monopoly/game.png';
 import MONOP_lost from '../assets/monopoly/lost.png';
+import TAM_lost from '../assets/tamagotchi/lost.png';
+import TAM_start from '../assets/tamagotchi/start.png';
+import TAM_game from '../assets/tamagotchi/game.png';
 import { useInView } from 'react-intersection-observer';
 import {useUserStore} from "../models/store.tsx";
 import {useEffect} from "react";
@@ -151,10 +154,6 @@ const Projects = () => {
             title: 'Tamagotchi like game',
             techUsed: [
                 {
-                    title: 'Mongo DB',
-                    link: 'https://cdn.icon-icons.com/icons2/2415/PNG/512/mongodb_original_logo_icon_146424.png'
-                },
-                {
                     title: 'Node.js',
                     link: 'https://seeklogo.com/images/N/nodejs-logo-FBE122E377-seeklogo.com.png'
                 },
@@ -169,9 +168,13 @@ const Projects = () => {
                 {
                     title: 'CSS',
                     link: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/CSS3_logo.svg/800px-CSS3_logo.svg.png'
+                },
+                {
+                    title: 'Redux',
+                    link: 'https://cdn.freebiesupply.com/logos/large/2x/redux-logo-png-transparent.png'
                 }
             ],
-            images: ['https://raw.githubusercontent.com/raminta17/tamagotchi_Front-End/main/img_2.png', 'https://github.com/raminta17/tamagotchi_Front-End/blob/main/img_1.png?raw=true', 'https://github.com/raminta17/tamagotchi_Front-End/blob/main/img.png?raw=true'],
+            images: [TAM_game, TAM_start, TAM_lost],
             projectInfo: ['Take care of your pet before he runs out of hp', 'Automatic status updates from back end', 'Levels as the game progresses', 'Random production of eggs', 'Win the game if your tamagotchi reaches maximum level'],
             frontEnd: 'https://github.com/raminta17/tamagotchi_Front-End',
             backEnd: 'https://github.com/raminta17/tamagotchi_Back-End',

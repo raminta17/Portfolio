@@ -70,8 +70,6 @@ const SingleProject = ({ project }:ProjectType)=>  {
                             <a href={project.try.link} target="_blank">Play it </a>
                             <span>{project.try.title}</span>
                         </div>
-
-
                     </div>}
                     <ul className="px-3">
                         {project.projectInfo.map((info: string, index: number) => <li key={index}>{info}</li>)}
