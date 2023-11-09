@@ -57,7 +57,7 @@ const Skills = () => {
             <div className="content mx-auto p-3 d-flex flex-column gap-5 overflow-hidden" ref={skillsRef}>
                 <h2 className="bottomBorder pb-3">SKILLS</h2>
                 <div className="skills d-flex gap-5 mt-2">
-                    <div className="box " ref={techSkillRef}
+                    <div className="box" ref={techSkillRef}
                          style={styleTechSkill}
                     >
                         <h4 className="bottomBorder py-2 pb-3">Technical Skills</h4>
@@ -109,7 +109,7 @@ const Skills = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="box p-4" ref={softSkillRef}
+                    <div className="box " ref={softSkillRef}
                          style={styleSoftSkill}
                     >
                         <h4 className="bottomBorder py-2 pb-3">Soft Skills</h4>
