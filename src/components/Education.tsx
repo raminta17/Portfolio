@@ -5,6 +5,10 @@ const Education = () => {
                 <h2 className="bottomBorder pb-3">EDUCATION</h2>
                 <div className="d-flex gap-5 f1">
                     <div>
+                        I completed a six-month, full-time course at Code Academy to further my journey and it has
+                        been incredibly fulfilling.
+                    </div>
+                    <div>
                         Throughout the course, I've successfully developed numerous individual front-end and full-stack
                         applications from inception to completion using Javascript, React, Typescript and Node.js. One
                         highlight of my journey was being as part of a small, high-achieving group to

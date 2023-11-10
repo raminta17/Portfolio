@@ -309,6 +309,7 @@ a {
 .projectImages {
     position: relative;
     transition: var(--transition);
+    height: fit-content;
 }
 
 .mainImage img {
@@ -318,7 +319,9 @@ a {
     cursor: pointer;
     transition: var(--transition);
 }
-
+ul {
+    margin-bottom: 0;
+}
 .imageModal {
     max-width: 80%;
     max-height: 80vh;
@@ -434,10 +437,7 @@ a {
 }
 
 @media (max-width: 1190px) {
-    .box {
-        flex-direction: column;
-    }
-    .skills {
+    .box, .md-column {
         flex-direction: column;
     }
     .singleProject {

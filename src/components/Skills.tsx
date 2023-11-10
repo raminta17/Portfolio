@@ -56,7 +56,7 @@ const Skills = () => {
         <div id="Skills" className="py-5">
             <div className="content mx-auto p-3 d-flex flex-column gap-5 overflow-hidden" ref={skillsRef}>
                 <h2 className="bottomBorder pb-3">SKILLS</h2>
-                <div className="skills d-flex gap-5 mt-2">
+                <div className="skills md-column d-flex gap-5 mt-2">
                     <div className="box" ref={techSkillRef}
                          style={styleTechSkill}
                     >
