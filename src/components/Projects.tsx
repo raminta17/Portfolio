@@ -211,7 +211,10 @@ const Projects = () => {
             projectInfo: ['Dig gold while you still have energy', 'Sell gold for randomly generated price', 'Buy upgrades (find more gold, regain energy, increase inventory slots)', 'Upgrade prices increases after buying them'],
             frontEnd: 'https://github.com/raminta17/goldDigGame',
             backEnd: null,
-            try: null
+            try: {
+                title: 'on desktop (no responsive design)',
+                link: 'https://gold-dig-game-ha69.vercel.app/'
+            }
         },
         {
             title: 'Movie reservation application',

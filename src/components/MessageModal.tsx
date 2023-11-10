@@ -33,7 +33,7 @@ const MessageModal = ({showModal, setShowModal}: TSetBoolean) => {
                 message: info.message
             })
         }
-        const response = await fetch('http://localhost:8001/sendEmail', options);
+        const response = await fetch('https://portfolio-back-end-mlsr.vercel.app/sendEmail', options);
         const data = await response.json();
         console.log('data from backend', data)
         if (data.ok) {
