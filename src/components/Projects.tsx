@@ -22,6 +22,11 @@ import EL_start from '../assets/elevator/start.png';
 import EL_end from '../assets/elevator/end.png';
 import MOV_seats from '../assets/movies/chooseSeats.png';
 import MOV_movies from '../assets/movies/movies.png';
+import MOV_profile from '../assets/movies/profile.png';
+import MOV_login from '../assets/movies/login.png';
+import HTML_first from '../assets/html/first.png';
+import HTML_second from '../assets/html/second.png';
+import HTML_third from '../assets/html/third.png';
 import {useInView} from 'react-intersection-observer';
 import {useUserStore} from "../models/store.tsx";
 import {useEffect} from "react";
@@ -228,9 +233,9 @@ const Projects = () => {
                     link: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/800px-HTML5_Badge.svg.png'
                 }
             ],
-            images: [MOV_seats, MOV_movies],
-            projectInfo: ['Login, profile page', 'Update username, photo, select gender', 'Choose a movie and reserve seats', 'Seats reservation stored in local storage'],
-            frontEnd: 'https://github.com/raminta17/liftas',
+            images: [MOV_seats, MOV_movies, MOV_profile, MOV_login],
+            projectInfo: ['User login', 'Update username, profile photo, select gender', 'Choose a movie and reserve available seats', 'Seats reservation stored in local storage', 'This project was my first universally written code - add new movie information to screens array and the code will do the rest to make a reservation possible'],
+            frontEnd: 'https://github.com/raminta17/JS_assignement',
             backEnd: null,
             try: null
         },
@@ -255,8 +260,34 @@ const Projects = () => {
                 }
             ],
             images: [EL_start, EL_end],
-            projectInfo: ['Go to the floor where the person waits', 'Take the person to the floor he wants'],
+            projectInfo: ['Go to the floor where the person waits', 'Take the person to the floor he wants', 'New people with new requests keep coming', 'Animated elevator door and person movement'],
             frontEnd: 'https://github.com/raminta17/liftas',
+            backEnd: null,
+            try: null
+        },
+        {
+            title: 'My HTML and CSS assignment',
+            techUsed: [
+                {
+                    title: 'SASS',
+                    link: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Sass_Logo_Color.svg/1280px-Sass_Logo_Color.svg.png'
+                },
+                {
+                    title: 'CSS',
+                    link: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/CSS3_logo.svg/800px-CSS3_logo.svg.png'
+                },
+                {
+                    title: 'Bootstrap',
+                    link: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/1280px-Bootstrap_logo.svg.png'
+                },
+                {
+                    title: 'HTML',
+                    link: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/800px-HTML5_Badge.svg.png'
+                }
+            ],
+            images: [HTML_first, HTML_second, HTML_third],
+            projectInfo: ['Used SCSS for styling', 'Full of details and animations', '3 break points for responsive design, smaller screens not responsive'],
+            frontEnd: 'https://github.com/raminta17/HTML_CSS_assignment',
             backEnd: null,
             try: null
         }
