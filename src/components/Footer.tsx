@@ -44,7 +44,7 @@ const Footer = () => {
         <div id="Contacts" className="parallaxBg footer py-3 d-flex flex-column " ref={contactsRef}>
             <div className="content mx-auto p-3 d-flex flex-column gap-2">
                 <h3 className="bottomBorder py-3">CONTACTS</h3>
-                <div>
+                <div className="d-flex flex-column gap-5">
                     <div className="d-flex gap-4">
                         <div className="sm-d-none">
                             <img className="profileImg" src={profilePhoto} alt=""/>
@@ -63,6 +63,7 @@ const Footer = () => {
                             </div>
                         </div>
                     </div>
+                    <div className="text-center">© {new Date().getFullYear()} ramintadev.lt</div>
                 </div>
             </div>
 
