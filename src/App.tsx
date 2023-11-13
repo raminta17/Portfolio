@@ -9,7 +9,7 @@ import {Envelope} from "react-bootstrap-icons";
 import {motion} from "framer-motion";
 import MessageModal from "./components/MessageModal.tsx";
 import Skills from "./components/Skills.tsx";
-// import Education from "./components/Education.tsx";
+import Education from "./components/Education.tsx";
 
 
 function App() {
@@ -37,8 +37,8 @@ function App() {
             >
                 <Navigation/>
                 <About/>
-                {/*<Education/>*/}
                 <Skills/>
+                <Education/>
                 <Projects/>
                 {showBtn &&
                     <motion.div

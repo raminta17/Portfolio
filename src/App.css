@@ -149,13 +149,13 @@ body {
     background-position: center;
     background-size: cover;
 }
-.main, .projects {
+.main{
     background-color: #2c2b2b;
 }
-#Skills {
+#Skills, .projects  {
     background: #1c1c1c;
 }
-#Skills .box {
+#Skills .box, .projects .box {
     background: #2c2b2b;
 }
 .nav {
@@ -193,9 +193,6 @@ nav a {
 .content {
     width: 75%;
 }
-/*.about {*/
-/*    text-align: justify;*/
-/*}*/
 .techSkills {
     display: flex;
     flex-wrap: wrap;
@@ -203,7 +200,6 @@ nav a {
 }
 .box {
     background-color: #1c1c1c;
-    /*border-radius: 10px;*/
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     padding: 30px;
     flex: 1;
@@ -219,16 +215,10 @@ nav a {
     font-size: 40px;
     height: 40px;
 }
-.projects {
-    background: #2c2b2b;
-}
 .projects img, .projects i {
     width: 30px;
     height: 30px;
     object-fit: contain;
-}
-.projects .box {
-    background: #1c1c1c;
 }
 .nav a {
     font-size: x-large;
@@ -291,6 +281,10 @@ nav a {
 }
 .singleProject a, .footer a {
     font-style: italic;
+}
+#Education span {
+    font-style: italic;
+    color: var(--specOrangeColor);
 }
 a {
     color: var(--specOrangeColor);
@@ -443,12 +437,15 @@ ul {
     .singleProject {
         align-items: start;
     }
+    .md-align-center {
+        align-items: center;
+        text-align: center;
+    }
 }
 @media (max-width: 768px) {
     .content {
         width: 100%;
     }
-
     .sm-column {
         flex-direction: column;
     }
@@ -516,7 +513,6 @@ ul {
         width: 100%;
         text-align: center;
         transition: var(--transition);
-
     }
     #fixed .largeNavText {
         font-size: 1.2rem;

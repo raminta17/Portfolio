@@ -13,6 +13,7 @@ const Footer = () => {
         setIsHomeInView,
         setIsAboutInView,
         setIsSkillsInView,
+        setIsEducationInView,
         setIsProjectsInView,
         setIsContactsInView
     } = useUserStore((state) => ({
@@ -20,7 +21,8 @@ const Footer = () => {
         setIsProjectsInView: state.setIsProjectsInView,
         setIsContactsInView: state.setIsContactsInView,
         setIsAboutInView: state.setIsAboutInView,
-        setIsSkillsInView: state.setIsSkillsInView
+        setIsSkillsInView: state.setIsSkillsInView,
+        setIsEducationInView: state.setIsEducationInView
 
     }))
 
@@ -30,6 +32,7 @@ const Footer = () => {
             setIsContactsInView(true)
             setIsAboutInView(false)
             setIsSkillsInView(false)
+            setIsEducationInView(false)
             setIsHomeInView(false)
         } else {
             setIsProjectsInView(true)

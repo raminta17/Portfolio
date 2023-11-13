@@ -6,10 +6,11 @@ const Navigation = () => {
     const [navClassNames, setNavClassNames] = useState('nav');
     const [fixed, setFixed] = useState('');
     const navRef = useRef<any | null>(null);
-    const {isHomeInView, isAboutInView, isSkillsInView, isProjectsInView, isContactsInView} = useUserStore(state => ({
+    const {isHomeInView, isAboutInView, isSkillsInView, isEducationInView, isProjectsInView, isContactsInView} = useUserStore(state => ({
         isAboutInView: state.isAboutInView,
         isHomeInView: state.isHomeInView,
         isSkillsInView: state.isSkillsInView,
+        isEducationInView: state.isEducationInView,
         isProjectsInView : state.isProjectsInView,
         isContactsInView: state.isContactsInView
     }));
@@ -47,6 +48,10 @@ const Navigation = () => {
             </div>
             <div className="navDiv text-center" onClick={()=> setNavClassNames('nav')}>
                 <a className={isSkillsInView ? 'largeNavText' : 'smallNavText'} href="#Skills">Skills</a>
+                <hr/>
+            </div>
+            <div className="navDiv text-center" onClick={()=> setNavClassNames('nav')}>
+                <a className={isEducationInView ? 'largeNavText' : 'smallNavText'} href="#Education">Education</a>
                 <hr/>
             </div>
             <div className="navDiv text-center" onClick={()=> setNavClassNames('nav')}>

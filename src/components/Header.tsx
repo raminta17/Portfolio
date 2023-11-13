@@ -13,10 +13,11 @@ const Header = ({setShowModal}:ShowModalType) => {
 
 
     const {ref: homeRef, inView: isHomeInView} = useInView({threshold:0.5});
-    const {setIsHomeInView, setIsAboutInView, setIsSkillsInView, setIsProjectsInView, setIsContactsInView} = useUserStore((state) => ({
+    const {setIsHomeInView, setIsAboutInView, setIsSkillsInView, setIsEducationInView, setIsProjectsInView, setIsContactsInView} = useUserStore((state) => ({
         setIsHomeInView: state.setIsHomeInView,
         setIsProjectsInView: state.setIsProjectsInView,
         setIsSkillsInView: state.setIsSkillsInView,
+        setIsEducationInView: state.setIsEducationInView,
         setIsContactsInView: state.setIsContactsInView,
         setIsAboutInView: state.setIsAboutInView
 
@@ -27,6 +28,7 @@ const Header = ({setShowModal}:ShowModalType) => {
             setIsProjectsInView(false)
             setIsContactsInView(false)
             setIsSkillsInView(false)
+            setIsEducationInView(false)
             setIsAboutInView(false)
             setIsHomeInView(true)
         }

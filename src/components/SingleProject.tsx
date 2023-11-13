@@ -1,8 +1,8 @@
 import {Modal} from "react-bootstrap";
-import {useRef, useState, useEffect} from "react";
+import React, {useRef, useState, useEffect} from "react";
 import {PlusCircle} from "react-bootstrap-icons";
 import {XLg} from "react-bootstrap-icons";
-import {useInView} from "framer-motion"
+import {motion, useInView} from "framer-motion"
 
 type ProjectType = {
     project: {
@@ -56,35 +56,41 @@ const SingleProject = ({project}: ProjectType) => {
         <div className="box singleProject d-flex flex-column gap-4" ref={projectRef} style={style}>
             <div className="d-flex sm-column justify-content-between gap-4 w-100">
                 <h4 className="m-0">{project.title}</h4>
-                <div className="d-flex gap-2">{project.techUsed.map((tech: TechType, index: number) => <img key={index}
-                                                                                                            src={tech.link}
-                                                                                                            alt=""/>)}</div>
+                <div className="d-flex gap-2">{project.techUsed.map((tech: TechType, index: number) =>
+                    <img key={index}
+                         src={tech.link}
+                         alt=""/>)}
+                </div>
             </div>
-
             <div className="d-flex flex-column gap-3 f1">
                 <div className="d-flex gap-5">
                     <b>CODE :</b>
                     <a href={project.frontEnd} target="_blank">Front-End</a>
                     {project.backEnd && <a href={project.backEnd} target="_blank">Back-End</a>}
                 </div>
-                {project.try && <div className="d-flex gap-5">
-                    <b>TRY:</b>
-                    <div>
-                        <a href={project.try.link} target="_blank">Play it </a>
-                        <span>{project.try.title}</span>
-                    </div>
-                </div>}
             </div>
             <div className="d-flex md-column gap-4">
-                <ul className="px-3 f1">
-                    {project.projectInfo.map((info: string, index: number) => <li key={index}>{info}</li>)}
-                </ul>
+                <div className="f1 d-flex flex-column gap-3">
+                    <ul className="px-3">
+                        {project.projectInfo.map((info: string, index: number) => <li key={index}>{info}</li>)}
+                    </ul>
+                    {project.try &&  <motion.div
+                        onClick={() => setShowModal(true)}
+                        className="getInTouchBtn d-flex align-items-center justify-content-center"
+                        whileHover={{ scale: 1.1 }}
+                        transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                    >
+                        Try it
+                    </motion.div>}
+                </div>
+
 
                 <div className="projectImages gap-2 f1 d-flex align-items-center">
                     <div className="mainImage"><img src={project.images[0]} alt=""/></div>
                     <div onClick={handleShowModal} className="plus"><h2
                         className="m-0 d-flex align-items-center gap-2">ZOOM IN <PlusCircle/></h2></div>
                 </div>
+
             </div>
 
 

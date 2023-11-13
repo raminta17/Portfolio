@@ -8,8 +8,6 @@ import {Github, Linkedin} from "react-bootstrap-icons";
 
 const About = () => {
 
-    // const aboutRef = useRef(null);
-    // const textRef = useRef(null);
     const [styleAbout, setStyleAbout] = useState({});
     const {ref, inView} = useInView({threshold: 0.5});
     const {ref: textRef, inView: isTextInView} = useInView({triggerOnce: true});
@@ -17,12 +15,14 @@ const About = () => {
         setIsHomeInView,
         setIsAboutInView,
         setIsSkillsInView,
+        setIsEducationInView,
         setIsProjectsInView,
         setIsContactsInView
     } = useUserStore((state) => ({
         setIsHomeInView: state.setIsHomeInView,
         setIsProjectsInView: state.setIsProjectsInView,
         setIsSkillsInView: state.setIsSkillsInView,
+        setIsEducationInView: state.setIsEducationInView,
         setIsContactsInView: state.setIsContactsInView,
         setIsAboutInView: state.setIsAboutInView
     }))
@@ -32,6 +32,7 @@ const About = () => {
             setIsProjectsInView(false)
             setIsContactsInView(false)
             setIsSkillsInView(false)
+            setIsEducationInView(false)
             setIsAboutInView(true)
             setIsHomeInView(false)
         }
@@ -52,13 +53,13 @@ const About = () => {
                 <h2 className="bottomBorder pb-3">ABOUT</h2>
                 <div
                     style={styleAbout}
-                    className="d-flex align-items-center sm-column gap-5" ref={textRef}>
+                    className="d-flex align-items-center md-column gap-5" ref={textRef}>
                     <div className="profilePhoto">
                         <div className="profilePhotoWrapper">
                             <div style={{backgroundImage: `url(${profilePhoto})`}}/>
                         </div>
                     </div>
-                    <div className="d-flex flex-column gap-3">
+                    <div className="d-flex flex-column md-align-center gap-3">
                         <div className="d-flex gap-3 aboutBtns">
                             <a href="https://github.com/raminta17" target="_blank">
                                 <motion.div
@@ -81,7 +82,7 @@ const About = () => {
                             <a href={CV}
                                download="Raminta-Alisauskaite-CV"
                                target="_blank"
-                                // rel="noreferrer"
+                                rel="noreferrer"
                             >
                                 <motion.div
                                     className="getInTouchBtn"

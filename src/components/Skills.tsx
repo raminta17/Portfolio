@@ -14,24 +14,25 @@ const Skills = () => {
         setIsHomeInView,
         setIsAboutInView,
         setIsSkillsInView,
+        setIsEducationInView,
         setIsProjectsInView,
         setIsContactsInView
     } = useUserStore((state) => ({
         setIsHomeInView: state.setIsHomeInView,
         setIsProjectsInView: state.setIsProjectsInView,
         setIsSkillsInView: state.setIsSkillsInView,
+        setIsEducationInView: state.setIsEducationInView,
         setIsContactsInView: state.setIsContactsInView,
         setIsAboutInView: state.setIsAboutInView
 
     }))
 
     useEffect(() => {
-        console.log(' i am in skills  in view use effect')
         if (isSkillsInView) {
-            console.log('i am inside the if')
             setIsProjectsInView(false)
             setIsContactsInView(false)
             setIsSkillsInView(true)
+            setIsEducationInView(false)
             setIsAboutInView(false)
             setIsHomeInView(false)
         }
