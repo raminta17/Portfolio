@@ -64,7 +64,8 @@ const MessageModal = ({showModal, setShowModal}: TSetBoolean) => {
                         placeholder="Your email address..."
                         {...register('senderEmail', {
                             required: 'Please provide your email address so I could get back to you',
-                            pattern: {value: /^[\w]+@([\w-]+\.)+[\w-]{2,4}$/, message: 'Invalid email'}
+                            pattern: {value: /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/
+                                , message: 'Invalid email'}
                         })}/>
                     {errors.senderEmail && <p className="error">{errors.senderEmail.message}</p>}
                     <textarea
