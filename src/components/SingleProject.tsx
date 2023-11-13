@@ -74,14 +74,14 @@ const SingleProject = ({project}: ProjectType) => {
                     <ul className="px-3">
                         {project.projectInfo.map((info: string, index: number) => <li key={index}>{info}</li>)}
                     </ul>
-                    {project.try &&  <motion.div
-                        onClick={() => setShowModal(true)}
+
+                    {project.try && <a href={project.try.link} target="_blank"> <motion.div
                         className="getInTouchBtn d-flex align-items-center justify-content-center"
                         whileHover={{ scale: 1.1 }}
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
                     >
                         Try it
-                    </motion.div>}
+                    </motion.div></a>}
                 </div>
 
 
