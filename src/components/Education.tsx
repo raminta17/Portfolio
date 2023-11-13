@@ -79,7 +79,7 @@ const Education = () => {
                         <span>Practice   10</span>
                     </div>
                 </div>
-                <div className="d-flex gap-5 md-column align-items-center" ref={textRef} style={styleAbout}>
+                <div className="d-flex gap-5 md-column" ref={textRef} style={styleAbout}>
 
                     <div className="f1 d-flex flex-column gap-3">
                         <div>

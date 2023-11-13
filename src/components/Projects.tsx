@@ -27,6 +27,8 @@ import MOV_login from '../assets/movies/login.png';
 import HTML_first from '../assets/html/first.png';
 import HTML_second from '../assets/html/second.png';
 import HTML_third from '../assets/html/third.png';
+import BG_game1 from '../assets/buildGame/game.png';
+import BG_game2 from '../assets/buildGame/gam2.png';
 import {useInView} from 'react-intersection-observer';
 import {useUserStore} from "../models/store.tsx";
 import {useEffect} from "react";
@@ -157,7 +159,7 @@ const Projects = () => {
             frontEnd: 'https://github.com/raminta17/monopolyGame',
             backEnd: null,
             try: {
-                title: ' on desktop (no responsive design)',
+                title: '(no responsive design)',
                 link: 'https://monopoly-game-six.vercel.app/'
             }
         },
@@ -212,8 +214,37 @@ const Projects = () => {
             frontEnd: 'https://github.com/raminta17/goldDigGame',
             backEnd: null,
             try: {
-                title: 'on desktop (no responsive design)',
+                title: '(no responsive design)',
                 link: 'https://gold-dig-game-ha69.vercel.app/'
+            }
+        },
+        {
+            title: 'Build game',
+            techUsed: [
+                {
+                    title: 'TypeScript',
+                    link: 'https://cdn.iconscout.com/icon/free/png-256/free-typescript-1174965.png?f=webp'
+                },
+                {
+                    title: 'CSS',
+                    link: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/CSS3_logo.svg/800px-CSS3_logo.svg.png'
+                },
+                {
+                    title: 'Bootstrap',
+                    link: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/1280px-Bootstrap_logo.svg.png'
+                },
+                {
+                    title: 'HTML',
+                    link: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/800px-HTML5_Badge.svg.png'
+                }
+            ],
+            images: [BG_game1, BG_game2],
+            projectInfo: ['Code written with TypeScript', 'Buy buildings if you have enough resources', 'Buildings gives or takes resources every second', 'Buy city hall to win the game'],
+            frontEnd: 'https://github.com/raminta17/build_game',
+            backEnd: null,
+            try: {
+                title: '',
+                link: 'https://build-game-mu.vercel.app/'
             }
         },
         {
@@ -240,7 +271,10 @@ const Projects = () => {
             projectInfo: ['User login', 'Update username, profile photo, select gender', 'Choose a movie and reserve available seats', 'Seats reservation stored in local storage', 'This project was my first universally written code - add new movie information to screens array and the code will do the rest to make a reservation possible'],
             frontEnd: 'https://github.com/raminta17/JS_assignement',
             backEnd: null,
-            try: null
+            try: {
+                title: '',
+                link: 'https://js-assignement.vercel.app/'
+            }
         },
         {
             title: 'Fun little elevator game',
@@ -266,7 +300,10 @@ const Projects = () => {
             projectInfo: ['Go to the floor where the person waits', 'Take the person to the floor he wants', 'New people with new requests keep coming', 'Animated elevator door and person movement'],
             frontEnd: 'https://github.com/raminta17/liftas',
             backEnd: null,
-            try: null
+            try: {
+                title: '',
+                link: 'https://liftas.vercel.app/'
+            }
         },
         {
             title: 'My HTML and CSS assignment',
@@ -292,10 +329,13 @@ const Projects = () => {
             projectInfo: ['Used SCSS for styling', 'Full of details and animations', '3 break points for responsive design, smaller screens not responsive'],
             frontEnd: 'https://github.com/raminta17/HTML_CSS_assignment',
             backEnd: null,
-            try: null
+            try: {
+                title: '',
+                link: 'https://html-css-assignment-chi.vercel.app/'
+            }
         }
     ]
-    const {ref: projectsRef, inView: isProjectsInView} = useInView({threshold: 0.2});
+    const {ref: projectsRef, inView: isProjectsInView} = useInView({threshold: 0.1});
     const {
         setIsHomeInView,
         setIsAboutInView,

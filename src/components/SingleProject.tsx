@@ -80,7 +80,7 @@ const SingleProject = ({project}: ProjectType) => {
                         whileHover={{ scale: 1.1 }}
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
                     >
-                        Try it
+                        Try it {project.try.title}
                     </motion.div></a>}
                 </div>
 
