@@ -1,5 +1,5 @@
 import {Modal} from "react-bootstrap";
-import React, {useRef, useState, useEffect} from "react";
+import {useRef, useState, useEffect} from "react";
 import {PlusCircle} from "react-bootstrap-icons";
 import {XLg} from "react-bootstrap-icons";
 import {motion, useInView} from "framer-motion"
