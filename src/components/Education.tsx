@@ -86,7 +86,7 @@ const Education = () => {
                             I successfully completed a six-month, full-time course at Code Academy to further my career
                             journey and it has
                             been incredibly fulfilling.
-                            Throughout the course, I've successfully developed numerous individual front-end and
+                            Throughout the course, I've developed numerous individual front-end and
                             full-stack
                             applications from inception to completion using Javascript, React, Typescript and Node.js.
                         </div>

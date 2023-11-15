@@ -5,7 +5,7 @@ const Navigation = () => {
 
     const [navClassNames, setNavClassNames] = useState('nav');
     const [fixed, setFixed] = useState('');
-    const navRef = useRef<any | null>(null);
+    const navRef = useRef<HTMLElement | null>(null);
     const {isHomeInView, isAboutInView, isSkillsInView, isEducationInView, isProjectsInView, isContactsInView} = useUserStore(state => ({
         isAboutInView: state.isAboutInView,
         isHomeInView: state.isHomeInView,
@@ -16,7 +16,6 @@ const Navigation = () => {
     }));
 
     useEffect(() => {
-        // const {offsetTop} = navRef.current;
         window.addEventListener('scroll', () => {
             if (window.scrollY > 0) {
                 setFixed('fixed');
@@ -39,7 +38,7 @@ const Navigation = () => {
                 <i className="fa-solid fa-bars"></i>
             </div>
             <div className="navDiv text-center" onClick={()=> setNavClassNames('nav')}>
-                <a className={isHomeInView ? 'largeNavText' : 'smallNavText'} href="#Home">Home</a>
+                <a onClick={() => window.scroll({behavior:"smooth"})} className={isHomeInView ? 'largeNavText' : 'smallNavText'} href="#Home">Home</a>
                 <hr/>
             </div>
             <div className="navDiv text-center" onClick={()=> setNavClassNames('nav')}>
@@ -59,7 +58,7 @@ const Navigation = () => {
                 <hr/>
             </div>
             <div className="navDiv text-center" onClick={()=> setNavClassNames('nav')}>
-                <a  className={isContactsInView ? 'largeNavText' : 'smallNavText'}  href="#Contacts">Contacts</a>
+                <a className={isContactsInView ? 'largeNavText' : 'smallNavText'}  href="#Contacts">Contacts</a>
                 <hr/>
             </div>
         </nav>

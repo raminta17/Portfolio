@@ -57,9 +57,13 @@ const SingleProject = ({project}: ProjectType) => {
             <div className="d-flex sm-column justify-content-between gap-4 w-100">
                 <h4 className="m-0">{project.title}</h4>
                 <div className="d-flex gap-2">{project.techUsed.map((tech: TechType, index: number) =>
-                    <img key={index}
-                         src={tech.link}
-                         alt=""/>)}
+                    <div className="position-relative techIcon d-flex flex-column align-items-center">
+                        <img key={index}
+                             src={tech.link}
+                             alt=""/>
+                        <div className="position-absolute text-center">{tech.title}</div>
+                    </div>
+                )}
                 </div>
             </div>
             <div className="d-flex flex-column gap-3 f1">
