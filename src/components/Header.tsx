@@ -1,17 +1,13 @@
-import React, {useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import {motion} from "framer-motion";
 import { useInView } from 'react-intersection-observer';
-import {useUserStore} from "../models/store.tsx";
+import {useUserStore} from "../modules/store.tsx";
+import {ShowModalType} from "../modules/types.tsx";
 
-type ShowModalType = {
-    setShowModal: React.Dispatch<React.SetStateAction<boolean>>
-}
 
 const Header = ({setShowModal}:ShowModalType) => {
 
     const [showArrow, setShowArrow] = useState(true);
-
-
     const {ref: homeRef, inView: isHomeInView} = useInView({threshold:0.5});
     const {setIsHomeInView, setIsAboutInView, setIsSkillsInView, setIsEducationInView, setIsProjectsInView, setIsContactsInView} = useUserStore((state) => ({
         setIsHomeInView: state.setIsHomeInView,

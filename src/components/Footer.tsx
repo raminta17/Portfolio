@@ -3,7 +3,7 @@ import {Github} from "react-bootstrap-icons";
 import profilePhoto from "../assets/Raminta_photo_square.jpg"
 import {useEffect, useRef} from "react";
 import {useInView} from "framer-motion";
-import {useUserStore} from "../models/store.tsx";
+import {useUserStore} from "../modules/store.tsx";
 
 const Footer = () => {
 

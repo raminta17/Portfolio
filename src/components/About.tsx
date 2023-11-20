@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import {motion} from "framer-motion";
 import {useInView} from 'react-intersection-observer';
-import {useUserStore} from "../models/store.tsx";
+import {useUserStore} from "../modules/store.tsx";
 import profilePhoto from "../assets/Raminta_photo_square.jpg"
 import CV from "../assets/CV.pdf"
 import {Github, Linkedin} from "react-bootstrap-icons";

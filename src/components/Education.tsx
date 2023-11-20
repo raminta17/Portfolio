@@ -1,10 +1,10 @@
-import certificate from '../assets/TypeScriptCertificate-1.png';
-import valuation from '../assets/TypeScriptValuation-1.png';
+import certificate from '../assets/education/TypeScriptCertificate-1.png';
+import valuation from '../assets/education/TypeScriptValuation-1.png';
 import {PlusCircle, XLg} from "react-bootstrap-icons";
 import {useEffect, useState} from "react";
 import {Modal} from "react-bootstrap";
 import {useInView} from "react-intersection-observer";
-import {useUserStore} from "../models/store.tsx";
+import {useUserStore} from "../modules/store.tsx";
 
 
 const Education = () => {

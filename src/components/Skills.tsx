@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import {useInView} from 'react-intersection-observer';
-import {useUserStore} from "../models/store.tsx";
+import {useUserStore} from "../modules/store.tsx";
 
 
 const Skills = () => {

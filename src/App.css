@@ -231,7 +231,6 @@ nav a {
 .getInTouchBtn {
     margin-top: 10px;
     width: 250px;
-    /*box-shadow: inset 0px 1px 20px 0px #fce2c1;*/
     background-color: transparent;
     border-radius: 42px;
     border: 3px solid #ffc477;

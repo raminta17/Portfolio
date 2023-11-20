@@ -1,19 +1,8 @@
 import {Modal} from "react-bootstrap";
-import {Dispatch, SetStateAction} from 'react';
 import {SubmitHandler, useForm} from "react-hook-form";
-
-type TSetBoolean = {
-    showModal: boolean
-    setShowModal: Dispatch<SetStateAction<boolean>>
-}
-
+import {TSetBoolean, Inputs} from "../modules/types.tsx";
 
 const MessageModal = ({showModal, setShowModal}: TSetBoolean) => {
-
-    type Inputs = {
-        senderEmail: string,
-        message: string
-    };
 
     const {
         register,
@@ -35,7 +24,6 @@ const MessageModal = ({showModal, setShowModal}: TSetBoolean) => {
         }
         const response = await fetch('https://portfolio-back-end-mlsr.vercel.app/sendEmail', options);
         const data = await response.json();
-        console.log('data from backend', data)
         if (data.ok) {
             setShowModal(false);
             reset();

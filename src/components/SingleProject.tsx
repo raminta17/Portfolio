@@ -3,25 +3,9 @@ import {useRef, useState, useEffect} from "react";
 import {PlusCircle} from "react-bootstrap-icons";
 import {XLg} from "react-bootstrap-icons";
 import {motion, useInView} from "framer-motion"
+import {CompProjectType, TechType} from "../modules/types.tsx";
 
-type ProjectType = {
-    project: {
-        title: string,
-        techUsed: TechType[],
-        images: string[],
-        projectInfo: string[],
-        frontEnd: string,
-        backEnd: string | null,
-        try: TechType | null
-    }
-}
-type TechType = {
-    title: string,
-    link: string
-}
-
-
-const SingleProject = ({project}: ProjectType) => {
+const SingleProject = ({project}: CompProjectType) => {
 
     const [showModal, setShowModal] = useState(false);
     const [imageIndex, setImageIndex] = useState(0);
@@ -114,7 +98,6 @@ const SingleProject = ({project}: ProjectType) => {
                 </div>
                 <XLg onClick={() => handleCloseModal()} className="close"/>
             </Modal>
-
         </div>
     );
 };
