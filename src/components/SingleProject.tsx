@@ -71,17 +71,12 @@ const SingleProject = ({project}: CompProjectType) => {
                         Try it {project.try.title}
                     </motion.div></a>}
                 </div>
-
-
                 <div className="projectImages gap-2 f1 d-flex align-items-center">
                     <div className="mainImage"><img src={project.images[0]} alt=""/></div>
                     <div onClick={handleShowModal} className="plus"><h2
                         className="m-0 d-flex align-items-center gap-2">ZOOM IN <PlusCircle/></h2></div>
                 </div>
-
             </div>
-
-
             <Modal className="modalProjectImages" show={showModal} style={{
                 display: 'flex',
                 alignItems: 'center',

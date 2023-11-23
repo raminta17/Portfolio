@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import {useInView} from 'react-intersection-observer';
 import {useUserStore} from "../modules/store.tsx";
+import {techSkills, softSkills} from "../modules/data.tsx";
 
 
 const Skills = () => {
@@ -63,51 +64,11 @@ const Skills = () => {
                     >
                         <h4 className="bottomBorder py-2 pb-3">Technical Skills</h4>
                         <div className="py-3 techSkills gap-4">
-                            <div className="d-flex flex-column gap-2 align-items-center"><img
-                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/800px-HTML5_Badge.svg.png"></img>HTML
-                            </div>
-                            <div className="d-flex flex-column gap-2 align-items-center"><img
-                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/CSS3_logo.svg/2048px-CSS3_logo.svg.png"
-                                alt=""/>CSS
-                            </div>
-                            <div className="d-flex flex-column gap-2 align-items-center"><img
-                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Sass_Logo_Color.svg/1280px-Sass_Logo_Color.svg.png"
-                                alt=""/>SCSS/SASS
-                            </div>
-                            <div className="d-flex flex-column gap-2 align-items-center"><i
-                                className="fa-brands fa-js text-warning"></i>Javascript
-                            </div>
-                            <div className="d-flex flex-column gap-2 align-items-center"><img
-                                src="https://cdn.iconscout.com/icon/free/png-256/free-typescript-1174965.png?f=webp"
-                                alt=""/>Typescript
-                            </div>
-                            <div className="d-flex flex-column gap-2 align-items-center"><img
-                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png"
-                                alt=""/>React
-                            </div>
-                            <div className="d-flex flex-column gap-2 align-items-center"><img
-                                src="https://cdn.freebiesupply.com/logos/large/2x/redux-logo-png-transparent.png"
-                                alt=""/>Redux
-                            </div>
-                            <div className="d-flex flex-column gap-2 align-items-center"><img
-                                src="https://seeklogo.com/images/N/nodejs-logo-FBE122E377-seeklogo.com.png" alt=""/>Node.js
-                            </div>
-                            <div className="d-flex flex-column gap-2 align-items-center"><img
-                                src="https://git-scm.com/images/logos/downloads/Git-Icon-Black.png"
-                                alt=""/>Git
-                            </div>
-                            <div className="d-flex flex-column gap-2 align-items-center"><img
-                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/1280px-Bootstrap_logo.svg.png"
-                                alt=""/>Bootstrap
-                            </div>
-                            <div className="d-flex flex-column gap-2 align-items-center"><img
-                                src="https://cdn.icon-icons.com/icons2/2415/PNG/512/mongodb_original_logo_icon_146424.png"
-                                alt=""/>MongoDB
-                            </div>
-                            <div className="d-flex flex-column gap-2 align-items-center"><img
-                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Socket-io.svg/2048px-Socket-io.svg.png"
-                                alt=""/>Socket.io
-                            </div>
+                            {techSkills.map((skill, index) =>
+                                <div key={index} className="d-flex flex-column gap-2 align-items-center"><img
+                                    src={skill.link}></img>{skill.title}
+                                </div>
+                            )}
                         </div>
                     </div>
                     <div className="box " ref={softSkillRef}
@@ -115,14 +76,7 @@ const Skills = () => {
                     >
                         <h4 className="bottomBorder py-2 pb-3">Soft Skills</h4>
                         <ul className="p-3">
-                            <li>High sense of responsibility</li>
-                            <li>Adaptability</li>
-                            <li>Loyalty</li>
-                            <li>Professionalism</li>
-                            <li>Team player</li>
-                            <li>Problem-solving</li>
-                            <li>Communication and teaching</li>
-                            <li>Honesty</li>
+                            {softSkills.map((skill, index) => <li key={index}>{skill}</li>)}
                         </ul>
                     </div>
                 </div>

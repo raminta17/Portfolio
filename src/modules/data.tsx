@@ -1,4 +1,4 @@
-import {ProjectType} from "./types.tsx";
+import {ProjectType, TechType} from "./types.tsx";
 import SM_posts from "../assets/socialMedia/posts.png";
 import SM_singlePost from "../assets/socialMedia/singlePost.png";
 import SM_startPage from "../assets/socialMedia/startPAge.png";
@@ -30,6 +30,58 @@ import HTML_first from "../assets/html/first.png";
 import HTML_second from "../assets/html/second.png";
 import HTML_third from "../assets/html/third.png";
 
+
+export const techSkills: TechType[] = [
+    {
+    title: 'HTML',
+    link: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/800px-HTML5_Badge.svg.png'
+},
+    {
+        title: 'CSS',
+        link: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/CSS3_logo.svg/2048px-CSS3_logo.svg.png'
+    },
+    {
+        title: 'SCSS/SASS',
+        link: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Sass_Logo_Color.svg/1280px-Sass_Logo_Color.svg.png'
+    },
+    {
+        title: 'Javascript',
+        link: 'https://cdn.freebiesupply.com/logos/thumbs/2x/javascript-logo.png'
+    },
+    {
+        title: 'TypeScript',
+        link: 'https://cdn.iconscout.com/icon/free/png-256/free-typescript-1174965.png?f=webp'
+    },
+    {
+        title: 'Bootstrap',
+        link: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/1280px-Bootstrap_logo.svg.png'
+    },
+    {
+        title: 'Redux',
+        link: 'https://cdn.freebiesupply.com/logos/large/2x/redux-logo-png-transparent.png'
+    },
+    {
+        title: 'Mongo DB',
+        link: 'https://cdn.icon-icons.com/icons2/2415/PNG/512/mongodb_original_logo_icon_146424.png'
+    },
+    {
+        title: 'Socket.io',
+        link: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Socket-io.svg/2048px-Socket-io.svg.png'
+    },
+    {
+        title: 'React',
+        link: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png'
+    },
+    {
+        title: 'Node.js',
+        link: 'https://seeklogo.com/images/N/nodejs-logo-FBE122E377-seeklogo.com.png'
+    },
+    {
+        title: 'Git',
+        link: 'https://git-scm.com/images/logos/downloads/Git-Icon-Black.png'
+    },
+]
+export const softSkills: string[] = ['High sense of responsibility', 'Adaptability', 'Loyalty', 'Professionalism', 'Team player', 'Problem-solving', 'Communication and teaching', 'Honesty']
 export const projects: ProjectType[] = [
     {
         title: 'Social media website',

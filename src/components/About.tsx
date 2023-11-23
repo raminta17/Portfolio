@@ -3,8 +3,9 @@ import {motion} from "framer-motion";
 import {useInView} from 'react-intersection-observer';
 import {useUserStore} from "../modules/store.tsx";
 import profilePhoto from "../assets/Raminta_photo_square.jpg"
-import CV from "../assets/CV.pdf"
+import CV from "../assets/Raminta_Alisauskaite_CV.pdf"
 import {Github, Linkedin} from "react-bootstrap-icons";
+// import {GeoAlt} from "react-bootstrap-icons";
 
 const About = () => {
 
@@ -54,12 +55,12 @@ const About = () => {
                 <div
                     style={styleAbout}
                     className="d-flex align-items-center md-column gap-5" ref={textRef}>
-                    <div className="profilePhoto">
-                        <div className="profilePhotoWrapper">
-                            <div style={{backgroundImage: `url(${profilePhoto})`}}/>
+                    <div className="d-flex flex-column gap-4 align-items-center">
+                        <div className="profilePhoto">
+                            <div className="profilePhotoWrapper">
+                                <div style={{backgroundImage: `url(${profilePhoto})`}}/>
+                            </div>
                         </div>
-                    </div>
-                    <div className="d-flex flex-column md-align-center gap-3">
                         <div className="d-flex gap-3 aboutBtns">
                             <a href="https://github.com/raminta17" target="_blank">
                                 <motion.div
@@ -82,7 +83,7 @@ const About = () => {
                             <a href={CV}
                                download="Raminta-Alisauskaite-CV"
                                target="_blank"
-                                rel="noreferrer"
+                               rel="noreferrer"
                             >
                                 <motion.div
                                     className="getInTouchBtn"
@@ -94,6 +95,9 @@ const About = () => {
                             </a>
 
                         </div>
+                    </div>
+                    <div className="d-flex flex-column md-align-center gap-3">
+                        <div>I'm Raminta Ališauskaitė, Full Stack Web developer based in Vilnius, Lithuania.</div>
                         <div>After a 7 year career as a physiotherapist in Scotland, I discovered my passion for
                             software development and it inspired me to pursue a new career path. Programming became a
                             source of joy for me as I learned to craft full stack applications using React,
@@ -106,6 +110,7 @@ const About = () => {
                             innovative teams. If you're looking for a dedicated and adaptable developer , I would love
                             to hear from you. Let's create something amazing together!
                         </div>
+
                     </div>
                 </div>
             </div>
