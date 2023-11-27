@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { useUserStore } from '../modules/store.tsx'
 import profilePhoto from '../assets/Raminta_photo_square.jpg'
-import CV from '../assets/CV.pdf'
+import CV from '../assets/Raminta_Alisauskaite_CV.pdf'
 import { Github, Linkedin } from 'react-bootstrap-icons'
 
 const About = () => {

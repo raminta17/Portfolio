@@ -44,6 +44,10 @@ export const techSkills: TechType[] = [
 		link: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Sass_Logo_Color.svg/1280px-Sass_Logo_Color.svg.png',
 	},
 	{
+		title: 'Bootstrap',
+		link: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/1280px-Bootstrap_logo.svg.png',
+	},
+	{
 		title: 'Javascript',
 		link: 'https://cdn.freebiesupply.com/logos/thumbs/2x/javascript-logo.png',
 	},
@@ -52,12 +56,16 @@ export const techSkills: TechType[] = [
 		link: 'https://cdn.iconscout.com/icon/free/png-256/free-typescript-1174965.png?f=webp',
 	},
 	{
-		title: 'Bootstrap',
-		link: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/1280px-Bootstrap_logo.svg.png',
+		title: 'React',
+		link: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png',
 	},
 	{
 		title: 'Redux',
 		link: 'https://cdn.freebiesupply.com/logos/large/2x/redux-logo-png-transparent.png',
+	},
+	{
+		title: 'Rest API',
+		link: 'https://dz2cdn1.dzone.com/storage/temp/14643633-tempsnip.png',
 	},
 	{
 		title: 'Mongo DB',
@@ -67,10 +75,7 @@ export const techSkills: TechType[] = [
 		title: 'Socket.io',
 		link: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Socket-io.svg/2048px-Socket-io.svg.png',
 	},
-	{
-		title: 'React',
-		link: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png',
-	},
+
 	{
 		title: 'Node.js',
 		link: 'https://seeklogo.com/images/N/nodejs-logo-FBE122E377-seeklogo.com.png',
@@ -126,6 +131,10 @@ export const projects: ProjectType[] = [
 				title: 'Redux',
 				link: 'https://cdn.freebiesupply.com/logos/large/2x/redux-logo-png-transparent.png',
 			},
+			{
+				title: 'Rest API',
+				link: 'https://dz2cdn1.dzone.com/storage/temp/14643633-tempsnip.png',
+			},
 		],
 		images: [
 			SM_posts,
@@ -139,6 +148,7 @@ export const projects: ProjectType[] = [
 		],
 		projectInfo: [
 			'My final exam project at CodeAcademy',
+			'CRUD application',
 			'Users registration, hashed passwords',
 			'Users, posts, conversations stored in MongoDb',
 			'Auto login',
@@ -191,6 +201,7 @@ export const projects: ProjectType[] = [
 		images: [BG_prepare1, BG_register, BG_prepare2, BG_battle],
 		projectInfo: [
 			'This was my Node.js+MongoDb+Socket.io assignment',
+			'CRUD application',
 			'Players registration, stored in MongoDb',
 			'Random weapons, armour, potions generation',
 			'Inventory management',

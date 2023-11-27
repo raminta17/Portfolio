@@ -89,7 +89,7 @@ const Education = () => {
 					ref={textRef}
 					style={styleAbout}
 				>
-					<div className='f1 d-flex flex-column gap-3'>
+					<div className='f1 d-flex flex-column gap-3 md-align-center'>
 						<div>
 							I successfully completed a six-month, full-time course at Code
 							Academy to further my career journey and it has been incredibly
@@ -105,7 +105,7 @@ const Education = () => {
 							problem-solving skills but also allowed me to contribute to a
 							real-world project with tangible impact.
 						</div>
-						<a href='#Social-media-website'>
+						<a href='#firstProject'>
 							<motion.div
 								className='getInTouchBtn text-center fw-light'
 								whileHover={{ scale: 1.1 }}

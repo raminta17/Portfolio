@@ -42,15 +42,12 @@ const SingleProject = ({ project }: CompProjectType) => {
 	return (
 		<div
 			className='box singleProject d-flex flex-column gap-4'
-			id={
-				project.title === 'Social media website' ? 'Social-media-website' : ''
-			}
 			ref={projectRef}
 			style={style}
 		>
 			<div className='d-flex sm-column justify-content-between gap-4 w-100'>
 				<h4 className='m-0'>{project.title}</h4>
-				<div className='d-flex gap-2'>
+				<div className='d-flex gap-2 flex-wrap'>
 					{project.techUsed.map((tech: TechType, index: number) => (
 						<div className='position-relative techIcon d-flex flex-column align-items-center'>
 							<img key={index} src={tech.link} />
