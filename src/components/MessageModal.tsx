@@ -13,7 +13,7 @@ const MessageModal = ({ showModal, setShowModal }: TSetBoolean) => {
 		formState: { errors },
 	} = useForm<Inputs>()
 
-	const submitEmail: SubmitHandler<Inputs> = async (info) => {
+	const submitEmail: SubmitHandler<Inputs> = async (info	) => {
 		const options = {
 			method: 'POST',
 			headers: {

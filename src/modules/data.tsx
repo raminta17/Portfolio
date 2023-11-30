@@ -250,7 +250,7 @@ export const projects: ProjectType[] = [
 		frontEnd: 'https://github.com/raminta17/monopolyGame',
 		backEnd: null,
 		try: {
-			title: '(no responsive design)',
+			title: '',
 			link: 'https://monopoly-game-six.vercel.app/',
 		},
 	},

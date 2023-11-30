@@ -76,7 +76,7 @@ const Education = () => {
 			<div className='content mx-auto p-3 d-flex flex-column gap-5' ref={ref}>
 				<h2 className='bottomBorder pb-3'>EDUCATION</h2>
 				<div className='d-flex md-column gap-3 justify-content-between'>
-					<h4>TYPESCRIPT (full stack) with Code Academy</h4>
+					<h4>TYPESCRIPT (full stack) with CodeAcademy 1060 hours</h4>
 
 					<div className='d-flex gap-3'>
 						<b>GRADES: </b>
