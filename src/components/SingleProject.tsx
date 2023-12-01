@@ -1,8 +1,7 @@
-import { Modal } from 'react-bootstrap'
-import { useRef, useState, useEffect } from 'react'
-import { PlusCircle } from 'react-bootstrap-icons'
-import { XLg } from 'react-bootstrap-icons'
 import { motion, useInView } from 'framer-motion'
+import { useEffect, useRef, useState } from 'react'
+import { Modal } from 'react-bootstrap'
+import { PlusCircle, XLg } from 'react-bootstrap-icons'
 import { CompProjectType, TechType } from '../modules/types.tsx'
 
 const SingleProject = ({ project }: CompProjectType) => {
@@ -49,8 +48,11 @@ const SingleProject = ({ project }: CompProjectType) => {
 				<h4 className='m-0'>{project.title}</h4>
 				<div className='d-flex gap-2 flex-wrap'>
 					{project.techUsed.map((tech: TechType, index: number) => (
-						<div className='position-relative techIcon d-flex flex-column align-items-center'>
-							<img key={index} src={tech.link} />
+						<div
+							key={index}
+							className='position-relative techIcon d-flex flex-column align-items-center'
+						>
+							<img alt='tech' src={tech.link} />
 							<div className='position-absolute text-center'>{tech.title}</div>
 						</div>
 					))}
@@ -91,7 +93,7 @@ const SingleProject = ({ project }: CompProjectType) => {
 				</div>
 				<div className='projectImages gap-2 f1 d-flex align-items-center'>
 					<div className='mainImage'>
-						<img src={project.images[0]} alt='' />
+						<img src={project.images[0]} alt='project image' />
 					</div>
 					<div onClick={handleShowModal} className='plus'>
 						<h2 className='m-0 d-flex align-items-center gap-2'>
@@ -116,7 +118,7 @@ const SingleProject = ({ project }: CompProjectType) => {
 						<i className='fa-solid fa-chevron-left'></i>
 					</div>
 					<div className='imageModal d-flex flex-column gap-2'>
-						<img src={project.images[imageIndex]} alt='' />
+						<img src={project.images[imageIndex]} alt='project image' />
 					</div>
 					<div onClick={() => changeImageIndex('right')} className='arrow'>
 						<i className='fa-solid fa-chevron-right'></i>

@@ -118,7 +118,7 @@ const Education = () => {
 					</div>
 					<div className='f1 projectImages'>
 						<div className='mainImage'>
-							<img src={educationPdf[0]} />
+							<img src={educationPdf[0]} alt='certificate' />
 						</div>
 						<div onClick={handleShowModal} className='plus'>
 							<h2 className='m-0 d-flex align-items-center gap-2'>
@@ -142,7 +142,7 @@ const Education = () => {
 								<i className='fa-solid fa-chevron-left'></i>
 							</div>
 							<div className='imageModal d-flex flex-column gap-2'>
-								<img src={educationPdf[imageIndex]} />
+								<img src={educationPdf[imageIndex]} alt='certificate' />
 							</div>
 							<div onClick={() => changeImageIndex('right')} className='arrow'>
 								<i className='fa-solid fa-chevron-right'></i>
