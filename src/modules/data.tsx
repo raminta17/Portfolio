@@ -1,34 +1,34 @@
-import { ProjectType, TechType } from './types.tsx'
-import SM_posts from '../assets/socialMedia/posts.png'
-import SM_singlePost from '../assets/socialMedia/singlePost.png'
-import SM_startPage from '../assets/socialMedia/startPAge.png'
-import SM_messages from '../assets/socialMedia/messages.png'
-import SM_createPost from '../assets/socialMedia/createPostModal.png'
-import SM_messageModal from '../assets/socialMedia/messagModal.png'
-import SM_profileRes from '../assets/socialMedia/profileResponsive.png'
-import SM_usersRes from '../assets/socialMedia/usersResponsive.png'
-import BG_prepare1 from '../assets/BattleGame/preparationPage1.png'
-import BG_register from '../assets/BattleGame/registerPage.png'
-import BG_prepare2 from '../assets/BattleGame/prepare2.png'
 import BG_battle from '../assets/BattleGame/battleArena.png'
-import MONOP_game from '../assets/monopoly/game.png'
-import MONOP_start from '../assets/monopoly/start.png'
-import MONOP_lost from '../assets/monopoly/lost.png'
-import TAM_game from '../assets/tamagotchi/game.png'
-import TAM_start from '../assets/tamagotchi/start.png'
-import TAM_lost from '../assets/tamagotchi/lost.png'
-import GD_game from '../assets/golddigGame/game.png'
-import BG_game1 from '../assets/buildGame/game.png'
+import BG_prepare1 from '../assets/BattleGame/preparationPage1.png'
+import BG_prepare2 from '../assets/BattleGame/prepare2.png'
+import BG_register from '../assets/BattleGame/registerPage.png'
 import BG_game2 from '../assets/buildGame/gam2.png'
-import MOV_seats from '../assets/movies/chooseSeats.png'
-import MOV_movies from '../assets/movies/movies.png'
-import MOV_profile from '../assets/movies/profile.png'
-import MOV_login from '../assets/movies/login.png'
-import EL_start from '../assets/elevator/start.png'
+import BG_game1 from '../assets/buildGame/game.png'
 import EL_end from '../assets/elevator/end.png'
+import EL_start from '../assets/elevator/start.png'
+import GD_game from '../assets/golddigGame/game.png'
 import HTML_first from '../assets/html/first.png'
 import HTML_second from '../assets/html/second.png'
 import HTML_third from '../assets/html/third.png'
+import MONOP_game from '../assets/monopoly/game.png'
+import MONOP_lost from '../assets/monopoly/lost.png'
+import MONOP_start from '../assets/monopoly/start.png'
+import MOV_seats from '../assets/movies/chooseSeats.png'
+import MOV_login from '../assets/movies/login.png'
+import MOV_movies from '../assets/movies/movies.png'
+import MOV_profile from '../assets/movies/profile.png'
+import SM_createPost from '../assets/socialMedia/createPostModal.png'
+import SM_messageModal from '../assets/socialMedia/messagModal.png'
+import SM_messages from '../assets/socialMedia/messages.png'
+import SM_posts from '../assets/socialMedia/posts.png'
+import SM_profileRes from '../assets/socialMedia/profileResponsive.png'
+import SM_singlePost from '../assets/socialMedia/singlePost.png'
+import SM_startPage from '../assets/socialMedia/startPAge.png'
+import SM_usersRes from '../assets/socialMedia/usersResponsive.png'
+import TAM_game from '../assets/tamagotchi/game.png'
+import TAM_lost from '../assets/tamagotchi/lost.png'
+import TAM_start from '../assets/tamagotchi/start.png'
+import { ProjectType, TechType } from './types.tsx'
 
 export const techSkills: TechType[] = [
 	{
@@ -316,7 +316,7 @@ export const projects: ProjectType[] = [
 		frontEnd: 'https://github.com/raminta17/goldDigGame',
 		backEnd: null,
 		try: {
-			title: '(no responsive design)',
+			title: '',
 			link: 'https://gold-dig-game-ha69.vercel.app/',
 		},
 	},
@@ -446,9 +446,10 @@ export const projects: ProjectType[] = [
 		],
 		images: [HTML_first, HTML_second, HTML_third],
 		projectInfo: [
+			'RegFood website clone',
 			'Used SCSS for styling',
 			'Full of details and animations',
-			'3 break points for responsive design, smaller screens not responsive',
+			'Responsive design',
 		],
 		frontEnd: 'https://github.com/raminta17/HTML_CSS_assignment',
 		backEnd: null,
