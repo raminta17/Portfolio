@@ -288,7 +288,10 @@ export const projects: ProjectType[] = [
 		],
 		frontEnd: 'https://github.com/raminta17/tamagotchi_Front-End',
 		backEnd: 'https://github.com/raminta17/tamagotchi_Back-End',
-		try: null,
+		try: {
+			title: '',
+			link: 'https://tamagotchi-front-end.vercel.app',
+		},
 	},
 	{
 		title: 'Treasure dig & hunt game',

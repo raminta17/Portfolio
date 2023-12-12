@@ -27,7 +27,10 @@ const MessageModal = ({ showModal, setShowModal }: TSetBoolean) => {
 				message: info.message,
 			}),
 		}
-		const response = await fetch(`${apiUrl}sendEmail` || apiUrlLocal, options)
+		const response = await fetch(
+			`${apiUrl}sendEmail` || `${apiUrlLocal}sendEmail`,
+			options,
+		)
 		const data = await response.json()
 		if (data.ok) {
 			setContactMessage(
